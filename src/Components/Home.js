@@ -40,7 +40,7 @@ function Home() {
             </div>
 
             <div className="columns11">
-            <div className="profile-stack">
+              <div className="profile-stack">
                 <div className="profile-images">
                   <img src={user1} alt="user1" className="profile-img" />
                   <img src={user2} alt="user2" className="profile-img" />
@@ -54,6 +54,72 @@ function Home() {
                     the last 24 hours
                   </span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="container">
+        <div className="home-info">
+          <div className="row">
+            <div className="col-lg-6 col-md-6">
+              <h5 className="info-title">
+                What is Harmoni <br /> Event
+              </h5>
+            </div>
+            <div className="col-lg-6 col-md-6">
+              <p className="info-detail">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aspernatur voluptas expedita vero optio alias velit itaque aut
+                aliquam minima asperiores, quaerat doloremque et provident
+                doloribus.
+              </p>
+            </div>
+          </div>
+
+          <br /><br />
+
+          <div className="row">
+            <div className="col-lg-6 col-md-6">
+              <h3 className="info-lable">
+                Your Event Will Be Beyond Your <br /> Imagination
+              </h3>
+            </div>
+            <div className="col-lg-6 col-md-6">
+              <p className="info-direction">Expore the Library</p>
+            </div>
+          </div>
+
+          <br /><br />
+
+          <div className="row">
+            <div className="col-lg-4 col-md-4">
+              <div className="services">
+                <p className="service-title">Chatbots</p>
+                <p className="service-details">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Quibusdam, recusandae?
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4">
+              <div className="services">
+                <p className="service-title">Knowledge Base</p>
+                <p className="service-details">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Quibusdam, recusandae?
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4">
+              <div className="services">
+                <p className="service-title">Education</p>
+                <p className="service-details">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Quibusdam, recusandae?
+                </p>
               </div>
             </div>
           </div>

@@ -22,7 +22,6 @@
     position: relative;
     z-index: 3;
     width: 100%;
-    max-width: 1100px !important;
     padding-right: calc(1.5rem * .5);
     padding-left: calc(1.5rem * .5);
     margin-right: auto;
@@ -56,14 +55,14 @@
     flex: 0 0 auto;
 }
 
-.hero .hero-container .row .columns33 p {
+.hero .hero-container p {
     color: #fff;
     font-size: 1rem;
     margin-top: 30px;
     line-height: 22px;
 }
 
-.hero .hero-container .row .columns33 p span {
+.hero .hero-container p span {
     margin-top: 40px;
     display: block;
 }
@@ -73,47 +72,47 @@
     flex: 0 0 auto;
 }
 
-.hero .hero-container .row .columns22 .sign-up-form {
+.hero .hero-container .sign-up-form {
     margin-top: 20px;
     margin-bottom: 15px;
-    padding: 5px 10px;
     border-radius: 7px;
     background-color: #fff;
     display: flex;
 }
 
-.hero .hero-container .row .columns22 .sign-up-form input[type="email"] {
+.hero .hero-container .row .sign-up-form input[type="email"] {
     background-color: transparent;
     border: 0;
     outline: none;
-    padding: 4px 10px;
-    width: 100%;
+    padding: 5px 10px;
+    width: 90%;
 }
 
-.hero .hero-container .row .columns22 .sign-up-form input[type="submit"] {
+.hero .hero-container .row .sign-up-form input[type="submit"] {
     border: 0;
     box-shadow: none;
     background-color: #de5c00;
     color: #fff;
     padding: 8px 20px 10px 20px;
-    border-radius: 7px;
     font-size: 1.1rem;
     cursor: pointer;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
-.hero .hero-container .row .columns11 .profile-stack {
+.hero .hero-container .row .profile-stack {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 2rem;
 }
 
-.hero .hero-container .row .columns11 .profile-stack .profile-images {
+.hero .hero-container .row .profile-stack .profile-images {
     display: flex;
     align-items: center;
 }
 
-.hero .hero-container .row .columns11 .profile-stack .profile-images .profile-img {
+.hero .hero-container .row .profile-stack .profile-images .profile-img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -123,11 +122,11 @@
     margin-left: -10px;
 }
 
-.hero .hero-container .row .columns11 .profile-stack .profile-images .profile-img:first-child {
+.hero .hero-container .row .profile-stack .profile-images .profile-img:first-child {
     margin-left: 0px;
 }
 
-.hero .hero-container .row .columns11 .profile-stack .profile-images .profile-count {
+.hero .hero-container .row .profile-stack .profile-images .profile-count {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -143,7 +142,7 @@
     z-index: 11111111;
 }
 
-.hero .hero-container .row .columns11 .profile-stack .profile-images .request-text {
+.hero .hero-container .row .profile-stack .profile-images .request-text {
     color: #fff;
     margin-left: 5px;
     font-size: 14px;

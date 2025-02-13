@@ -14,9 +14,9 @@ function Home() {
       <Header />
       <div className="hero">
         <img src={hero} alt="hero-background" className="hero-back" />
-        <div className="hero-container">
+        <div className="hero-container container">
           <div className="row">
-            <div className="columns33">
+            <div className="col-lg-6 col-md-10 col-sm-10 col-12">
               <h1>
                 One Stop Event <br /> Planet
               </h1>
@@ -30,7 +30,7 @@ function Home() {
               </p>
             </div>
 
-            <div class="columns22">
+            <div class="col-lg-5">
               <form action="" class="email-form">
                 <div class="sign-up-form">
                   <input type="email" name="email" />
@@ -39,7 +39,7 @@ function Home() {
               </form>
             </div>
 
-            <div className="columns11">
+            <div className="col-lg-6">
               <div className="profile-stack">
                 <div className="profile-images">
                   <img src={user1} alt="user1" className="profile-img" />

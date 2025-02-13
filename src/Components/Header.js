@@ -5,26 +5,28 @@ import "../Styles/header.css";
 
 function Header() {
   return (
-    <header className="header">
-      <Link to="/">
-        <img src={logo} alt="enevt_management" className="logo" />
-      </Link>
-
-      <nav className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/About">About</Link>
-        <Link to="/Events">Events</Link>
-        <Link to="/Gallary">Gallary</Link>
-        <Link to="/Contact">Contact</Link>
-      </nav>
-
-      <div className="user-profile">
-        <Link className="account">
-          <img src={userLogo} alt="user_logo" className="user-avtar" />
-          <span className="username">Sparks User</span>
+    <>
+      <header className="header">
+        <Link to="/">
+          <img src={logo} alt="enevt_management" className="logo" />
         </Link>
-      </div>
-    </header>
+
+        <nav className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/About">About</Link>
+          <Link to="/Events">Events</Link>
+          <Link to="/Gallary">Gallary</Link>
+          <Link to="/Contact">Contact</Link>
+        </nav>
+
+        <div className="user-profile">
+          <Link className="account">
+            <img src={userLogo} alt="user_logo" className="user-avtar" />
+            <span className="username">Sparks User</span>
+          </Link>
+        </div>
+      </header>
+    </>
   );
 }
 

@@ -178,12 +178,12 @@
     font-size: 18px;
 }
 
-.home-info .services{
+.home-info .services {
     width: 95%;
     margin: auto;
 }
 
-.home-info .services .service-title{
+.home-info .services .service-title {
     position: relative;
     color: #fff;
     font-weight: 600;
@@ -200,6 +200,93 @@
     background-color: #e9a76d;
 }
 
-.home-info .services .info-detail{
+.home-info .services .info-detail {
     color: #b6b6b6;
+}
+
+.event-info {
+    width: 100%;
+    padding: 60px 0px;
+    background-color: #000;
+}
+
+.event-info .event-title .event-tagline {
+    font-size: 24px;
+    max-width: 300px;
+    color: #e27fc0;
+    font-weight: 700;
+}
+
+.event-info .event-list ul {
+    list-style: none;
+}
+
+.event-info .event-list ul li {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.event-info .event-list ul li:first-child {
+    padding-top: 10px;
+}
+
+.event-info .event-list ul li::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    width: 32px;
+    height: 3px;
+    background-color: #e9a76d;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.event-info .event-list ul li:first-child::before {
+    margin-top: 10px;
+}
+
+.event-info .event-details ul {
+    list-style: none;
+}
+
+.event-info .event-details ul li {
+    color: #fff;
+    font-size: 14px;
+    padding: 30px 10px;
+    color: #5160e5;
+}
+
+.event-info .event-details ul li:first-child {
+    padding: 10px 10px;
+}
+
+.register {
+    background: #e27fc0;
+    border-radius: 15px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 0px;
+}
+
+.register .register-content p{
+    font-size: 12px;
+}
+
+.register .register-content h6{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.register .start-btn button{
+    color: #fff;
+    background: #000;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 20px;
 }

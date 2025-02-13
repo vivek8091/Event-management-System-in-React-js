@@ -60,7 +60,6 @@ function Home() {
         </div>
       </div>
 
-
       <div className="container">
         <div className="home-info">
           <div className="row">
@@ -79,7 +78,8 @@ function Home() {
             </div>
           </div>
 
-          <br /><br />
+          <br />
+          <br />
 
           <div className="row">
             <div className="col-lg-6 col-md-6">
@@ -92,7 +92,8 @@ function Home() {
             </div>
           </div>
 
-          <br /><br />
+          <br />
+          <br />
 
           <div className="row">
             <div className="col-lg-4 col-md-4">
@@ -120,6 +121,73 @@ function Home() {
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Quibusdam, recusandae?
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="event-info">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-4 col-md-4">
+              <div className="event-title">
+                <p className="event-tagline">
+                  Harmony Event Management Firm & Wedding Planner is a group of
+                  creatice minds who would like to make weddings, birthday & any
+                  kind of events courteous and a better place for our clients to
+                  celibrate their important moments of lives...
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4">
+              <div className="event-list">
+                <ul>
+                  <li>Photography</li>
+                  <li>
+                    Cinematography or <br /> Videography Service
+                  </li>
+                  <li>
+                    Full Venue Decoration <br /> Service
+                  </li>
+                  <li>Home Decoration</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4">
+              <div className="event-details">
+                <ul>
+                  <li>
+                    A team of three telented photographers are ready to snap the
+                    bet moments of you ceremony
+                  </li>
+                  <li>
+                    Creative full HD 1080p video. A different space of yoour
+                    ceremony
+                  </li>
+                  <li>
+                    A blend of out-of-the box ideas to decore your precious date
+                  </li>
+                  <li>
+                    Just call us and get total event solution under one roof
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row mt-5">
+          <div className="col-lg-7 col-md-10 col-sm-10 col-12 m-auto">
+            <div className="register">
+              <div className="register-content">
+                <p>Request Early Access To Get Started</p>
+                <h6>
+                  Register Today & Start Exploring The Endless <br /> Possibilities
+                </h6>
+              </div>
+              <div className="start-btn">
+                <button>Get Started</button>
               </div>
             </div>
           </div>

@@ -17,6 +17,7 @@ function Header() {
           <Link to="/Events">Events</Link>
           <Link to="/Gallary">Gallary</Link>
           <Link to="/Contact">Contact</Link>
+          <Link to="/Login">Login</Link>
         </nav>
 
         <div className="user-profile">

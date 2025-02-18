@@ -1,0 +1,104 @@
+.about-harmoni {
+    position: relative;
+    width: 100%;
+    background: url(../assets/about-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 5rem 0;
+}
+
+.about-harmoni::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.about-harmoni .content{
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.about-harmoni .content p{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.about-harmoni .content h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffc107;
+}
+
+.about-harmoni .content h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.about-harmoni nav{
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 14px;
+}
+
+.about-harmoni nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.about-info{
+    background: #000;
+    color: #fff;
+    padding: 50px 0px;
+}
+
+.about-info .about-title p{
+    font-size: 12px;
+}
+
+.about-info .about-title h4{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.about-info h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.about-info p{
+    max-width: 60%;
+}
+
+.about-info .underline{
+    display: inline-block;
+    width: 40px;
+    height: 5px;
+    background-color: #ffc107;
+    margin-left: 8px;
+}
+
+.about-info .our-mission p:nth-of-type(2){
+    font-style: italic;
+    font-weight: bold;
+}
+
+.about-info .our-vision p:nth-of-type(2){
+    font-style: italic;
+    font-weight: bold;
+}

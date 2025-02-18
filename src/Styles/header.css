@@ -21,6 +21,7 @@
 .nav-links {
     display: flex;
     gap: 20px;
+    padding-left: 12px;
 }
 
 .nav-links a {

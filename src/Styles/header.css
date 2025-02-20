@@ -8,32 +8,38 @@
     width: 100%;
 }
 
+.logo-section{
+    width: 200px;
+    height: 65px;
+}
+
 .logo {
-    width: auto;
-    height: 60px;
+    width: 120px;
 }
 
 .user-avtar {
-    width: auto;
-    height: 60px;
+    width: 65px;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px;
-    padding-left: 12px;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #fff;
+    padding: 10px;
     font-size: 14px;
     text-transform: uppercase;
 }
 
 .user-profile{
+    width: 200px;
     display: flex;
     align-items: center;
+    height: 65px;
 }
 
 .user-profile .account{

@@ -7,9 +7,11 @@ function Header() {
   return (
     <>
       <header className="header">
-        <Link to="/">
-          <img src={logo} alt="enevt_management" className="logo" />
-        </Link>
+        <div className="logo-section">
+          <Link to="/">
+            <img src={logo} alt="enevt_management" className="logo" />
+          </Link>
+        </div>
 
         <nav className="nav-links">
           <Link to="/">Home</Link>

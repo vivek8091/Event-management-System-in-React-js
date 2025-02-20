@@ -1,19 +1,22 @@
 import "../Styles/home.css";
 import Header from "./Header";
-import hero from "../assets/hero-background.jpg";
-import user1 from "../assets/user1.jpg";
-import user2 from "../assets/user2.jpg";
-import user3 from "../assets/user3.jpg";
-import user4 from "../assets/user4.jpg";
-import user5 from "../assets/user5.jpg";
-import user6 from "../assets/user6.jpg";
+
+const userImages = {
+  heroBack: require("../assets/hero-background.jpg"),
+  user1: require("../assets/user1.jpg"),
+  user2: require("../assets/user2.jpg"),
+  user3: require("../assets/user3.jpg"),
+  user4: require("../assets/user4.jpg"),
+  user5: require("../assets/user5.jpg"),
+  user6: require("../assets/user6.jpg"),
+};
 
 function Home() {
   return (
     <>
       <Header />
       <div className="hero">
-        <img src={hero} alt="hero-background" className="hero-back" />
+        <img src={userImages.heroBack} alt="hero-background" className="hero-back" />
         <div className="hero-container container">
           <div className="row">
             <div className="col-lg-6 col-md-10 col-sm-10 col-12">
@@ -42,12 +45,36 @@ function Home() {
             <div className="col-lg-6">
               <div className="profile-stack">
                 <div className="profile-images">
-                  <img src={user1} alt="user1" className="profile-img" />
-                  <img src={user2} alt="user2" className="profile-img" />
-                  <img src={user3} alt="user3" className="profile-img" />
-                  <img src={user4} alt="user4" className="profile-img" />
-                  <img src={user5} alt="user5" className="profile-img" />
-                  <img src={user6} alt="user6" className="profile-img" />
+                  <img
+                    src={userImages.user1}
+                    alt="user1"
+                    className="profile-img"
+                  />
+                  <img
+                    src={userImages.user2}
+                    alt="user2"
+                    className="profile-img"
+                  />
+                  <img
+                    src={userImages.user3}
+                    alt="user3"
+                    className="profile-img"
+                  />
+                  <img
+                    src={userImages.user4}
+                    alt="user4"
+                    className="profile-img"
+                  />
+                  <img
+                    src={userImages.user5}
+                    alt="user5"
+                    className="profile-img"
+                  />
+                  <img
+                    src={userImages.user6}
+                    alt="user6"
+                    className="profile-img"
+                  />
                   <span className="profile-count">1.6K+</span>
                   <span className="request-text">
                     <strong>1,600</strong> people requested access a visit in
@@ -183,7 +210,8 @@ function Home() {
               <div className="register-content">
                 <p>Request Early Access To Get Started</p>
                 <h6>
-                  Register Today & Start Exploring The Endless <br /> Possibilities
+                  Register Today & Start Exploring The Endless <br />{" "}
+                  Possibilities
                 </h6>
               </div>
               <div className="start-btn">

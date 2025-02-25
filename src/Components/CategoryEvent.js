@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import "../Styles/categoryEvent.css";
 
-
 const catImages = {
   cricket: require("../assets/events/cricket.jpg"),
   party: require("../assets/events/party.jpg"),
@@ -12,7 +11,6 @@ const catImages = {
 };
 
 function CategoryEvent() {
-
   const { CategoryEvent } = useParams();
 
   const eventData = {
@@ -94,13 +92,19 @@ function CategoryEvent() {
   let content;
 
   if (events.length > 0) {
-    content = events.map((event) => (
-      <div key={event.id} className="event-item">
-        <img src={event.image} alt={event.name} className="event-img" />
-        <h3>{event.name}</h3>
-        <p>{event.description}</p>
+    content = (
+      <div className="row w-100 m-auto mt-3 justify-content-start">
+        {events.map((event) => (
+            <div className="col-lg-3 col-md-3 col-sm-6 col-12 d-flex flex-column align-items-center mb-3">
+              <div key={event.id} className="event-item">
+                <img src={event.image} alt={event.name} className="event-img" />
+                <h3>{event.name}</h3>
+                <p>{event.description}</p>
+              </div>
+            </div>
+        ))}
       </div>
-    ));
+    )
   } else {
     content = <p>No events found for {CategoryEvent}</p>;
   }
@@ -120,10 +124,7 @@ function CategoryEvent() {
           </Link>
         </nav>
       </div>
-      <div>
-        <h1>{CategoryEvent.toUpperCase()}</h1>
-        {content}
-      </div>
+      <div>{content}</div>
     </>
   );
 }

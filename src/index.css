@@ -16,7 +16,6 @@ html {
   width: 100%;
   overflow-x: hidden !important;
   scroll-behavior: auto;
-  padding-top: 42px;
 }
 
 * {

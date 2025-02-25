@@ -1,11 +1,9 @@
-import Header from "./Header";
 import "../Styles/about.css";
 import { Link } from "react-router-dom";
 
 function About() {
   return (
     <>
-      <Header />
       <div className="about-harmoni">
         <div className="content">
           <p>All you need to</p>

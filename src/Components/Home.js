@@ -1,5 +1,4 @@
 import "../Styles/home.css";
-import Header from "./Header";
 
 const userImages = {
   heroBack: require("../assets/hero-background.jpg"),
@@ -14,7 +13,6 @@ const userImages = {
 function Home() {
   return (
     <>
-      <Header />
       <div className="hero">
         <img src={userImages.heroBack} alt="hero-background" className="hero-back" />
         <div className="hero-container container">

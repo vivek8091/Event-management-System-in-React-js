@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import Header from "./Header";
 import "../Styles/categoryEvent.css";
-// import useScrollToTop from "../Components/scrollTop";
+
 
 const catImages = {
   cricket: require("../assets/events/cricket.jpg"),
@@ -13,18 +12,35 @@ const catImages = {
 };
 
 function CategoryEvent() {
-    // useScrollToTop(CategoryEvent);
-  // const location = useLocation();
-  // const category = location.state?.category || "unknown";
 
   const { CategoryEvent } = useParams();
 
-//   useLayoutEffect(() => {
-//     window.scrollTo(0, 0);
-//   }, [CategoryEvent]);
-
   const eventData = {
     cricket: [
+      {
+        id: 1,
+        name: "IPL 2024",
+        image: catImages.cricket,
+        description: "Biggest cricket league in India.",
+      },
+      {
+        id: 1,
+        name: "IPL 2024",
+        image: catImages.cricket,
+        description: "Biggest cricket league in India.",
+      },
+      {
+        id: 1,
+        name: "IPL 2024",
+        image: catImages.cricket,
+        description: "Biggest cricket league in India.",
+      },
+      {
+        id: 1,
+        name: "IPL 2024",
+        image: catImages.cricket,
+        description: "Biggest cricket league in India.",
+      },
       {
         id: 1,
         name: "IPL 2024",
@@ -91,7 +107,6 @@ function CategoryEvent() {
 
   return (
     <>
-      <Header />
       <div className="events-harmoni">
         <div className="content">
           <h1>{CategoryEvent.toUpperCase()}</h1>

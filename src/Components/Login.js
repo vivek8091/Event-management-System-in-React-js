@@ -1,10 +1,8 @@
 import "../Styles/login.css";
-import Header from "./Header";
 
 function Login() {
   return (
     <>
-      <Header />
         <div className="login-form">
           <form>
             <div class="mb-3">

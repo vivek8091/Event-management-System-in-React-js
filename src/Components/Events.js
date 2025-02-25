@@ -1,4 +1,3 @@
-import Header from "./Header";
 import { Link, useNavigate } from "react-router-dom";
 import "../Styles/events.css";
 
@@ -11,7 +10,7 @@ const catImages = {
   concert: require("../assets/events/concert.jpg"),
 };
 
-function Events() {
+export default function Events() {
 
     const navigate = useNavigate();
 
@@ -20,7 +19,6 @@ function Events() {
     }
   return (
     <>
-      <Header />
       <div className="events-harmoni">
         <div className="content">
           <h1>Events</h1>
@@ -120,5 +118,3 @@ function Events() {
     </>
   );
 }
-
-export default Events;

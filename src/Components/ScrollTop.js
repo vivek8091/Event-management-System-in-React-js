@@ -2,13 +2,19 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation(); // Gets the current route path
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls to top when pathname changes
-  }, [pathname]); // Runs every time pathname changes
+    const wrapper = document.getElementById("main-container"); // Check if there's a wrapper div
 
-  return null; // This component does not render anything
+    if (wrapper) {
+      wrapper.scrollTo(0, 0); // Instantly move wrapper to top
+    } else {
+      window.scrollTo(0, 0); // Instantly move page to top
+    }
+  }, [pathname]);
+
+  return null;
 };
 
 export default ScrollToTop;

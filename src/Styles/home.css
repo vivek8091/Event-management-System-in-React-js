@@ -273,16 +273,16 @@
     padding: 15px 0px;
 }
 
-.register .register-content p{
+.register .register-content p {
     font-size: 12px;
 }
 
-.register .register-content h6{
+.register .register-content h6 {
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.register .start-btn button{
+.register .start-btn button {
     color: #fff;
     background: #000;
     padding: 7px 20px;

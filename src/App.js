@@ -9,6 +9,7 @@ import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import Layout from "./Components/Layout";
 import CategoryEvent from "./Components/CategoryEvent";
+import EventDetails from "./Components/EventDetails";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Events/:CategoryEvent" element={<CategoryEvent />} />
+            <Route path="/EventDetails/:eventId" element={<EventDetails />} />
           </Route>
         </Routes>
     </>

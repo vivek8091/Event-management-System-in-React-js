@@ -4,7 +4,7 @@ import "../Styles/events.css";
 const catImages = {
   cricket: require("../assets/events/cricket.jpg"),
   party: require("../assets/events/party.jpg"),
-  cristmas: require("../assets/events/cristmas.jpg"),
+  festivals: require("../assets/events/cristmas.jpg"),
   food: require("../assets/events/food.jpg"),
   festival: require("../assets/events/diwali.jpg"),
   concert: require("../assets/events/concert.jpg"),
@@ -70,17 +70,17 @@ export default function Events() {
             <div className="col-lg-4 col-md-4 col-sm-6 col-12 m-auto">
               <div
                 className="category"
-                onClick={() => handleCategoryClick("cristmas")}
+                onClick={() => handleCategoryClick("Festivals")}
               >
                 <div className="cat-img">
                   <img
-                    src={catImages.cristmas}
+                    src={catImages.festivals}
                     alt="cricket"
                     className="img-fluid"
                   />
                 </div>
                 <div className="cat-name">
-                  <p>Cristmas</p>
+                  <p>Festivals</p>
                 </div>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function Events() {
             <div className="col-lg-4 col-md-4 col-sm-6 col-12 m-auto">
               <div
                 className="category"
-                onClick={() => handleCategoryClick("festival")}
+                onClick={() => handleCategoryClick("celebrations")}
               >
                 <div className="cat-img">
                   <img
@@ -114,7 +114,7 @@ export default function Events() {
                   />
                 </div>
                 <div className="cat-name">
-                  <p>Festivals</p>
+                  <p>Celebrations</p>
                 </div>
               </div>
             </div>

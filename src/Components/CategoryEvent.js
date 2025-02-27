@@ -1,100 +1,116 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import "../Styles/categoryEvent.css";
 
-const catImages = {
+export const catImages = {
   ipl: require("../assets/events/ipl.jpg"),
   mcg: require("../assets/events/mcg.jpg"),
   ahmedabad: require("../assets/events/ahmedabad.webp"),
   cricket: require("../assets/events/cricket.jpg"),
-  party: require("../assets/events/party.jpg"),
-  cristmas: require("../assets/events/cristmas.jpg"),
+  party: require("../assets/events/newYear.jpg"),
+  festivals: require("../assets/events/cristmas2.jpg"),
   food: require("../assets/events/food.jpg"),
-  festival: require("../assets/events/diwali.jpg"),
+  celebrations: require("../assets/events/diwali.jpg"),
   concert: require("../assets/events/concert.jpg"),
 };
 
+export const eventData = {
+  cricket: [
+    {
+      id: 101,
+      name: "Indian Premier League",
+      image: catImages.ipl,
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Wankhade Cricket Stadium, Mumbai",
+      price: 599,
+    },
+    {
+      id: 102,
+      name: "Women Premier League",
+      image: catImages.ahmedabad,
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Narendra Modi Stadium, Ahmedabad",
+      price: 599,
+    },
+    {
+      id: 103,
+      name: "Gokuldhaam Premier League",
+      image: catImages.cricket,
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Gokuldhaam Society, Mumbai",
+      price: 599,
+    },
+    {
+      id: 104,
+      name: "Big Bash League",
+      image: catImages.mcg,
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Melbourne Cricket Ground, Australia",
+      price: 599,
+    },
+  ],
+  party: [
+    {
+      id: 201,
+      name: "New Year Party",
+      image: catImages.party,
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Melbourne Cricket Ground, Australia",
+      price: 599,
+    },
+  ],
+  festivals: [
+    {
+      id: 301,
+      name: "Cristmas",
+      image: catImages.festivals,
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Melbourne Cricket Ground, Australia",
+      price: 599,
+    },
+  ],
+  food: [
+    {
+      id: 401,
+      name: "McDonalds",
+      image: catImages.food,
+      location: "Ahmedabad",
+    },
+  ],
+  celebrations: [
+    {
+      id: 501,
+      name: "Diwali Celebration",
+      image: catImages.celebrations,
+      description: "Festival of lights.",
+      city: "botad",
+    },
+  ],
+  concert: [
+    {
+      id: 601,
+      name: "New Year Party",
+      image: catImages.concert,
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Melbourne Cricket Ground, Australia",
+      price: 599,
+    },
+  ],
+};
+
+
 function CategoryEvent() {
   const { CategoryEvent } = useParams();
+  const navigate = useNavigate();
 
-  const eventData = {
-    cricket: [
-      {
-        id: 1,
-        name: "Indian Premier League",
-        image: catImages.ipl,
-        date: "2025-02-22",
-        time: "07:30",
-        location: "Wankhade Cricket Stadium, Mumbai",
-        price: 599,
-      },
-      {
-        id: 2,
-        name: "Women Premier League",
-        image: catImages.ahmedabad,
-        date: "2025-02-22",
-        time: "07:30",
-        location: "Narendra Modi Stadium, Ahmedabad",
-        price: 599,
-      },
-      {
-        id: 3,
-        name: "Gokuldhaam Premier League",
-        image: catImages.cricket,
-        date: "2025-02-22",
-        time: "07:30",
-        location: "Gokuldhaam Society, Mumbai",
-        price: 599,
-      },
-      {
-        id: 4,
-        name: "Big Bash League",
-        image: catImages.mcg,
-        date: "2025-02-22",
-        time: "07:30",
-        location: "Melbourne Cricket Ground, Australia",
-        price: 599,
-      },
-    ],
-    party: [
-      {
-        id: 2,
-        name: "New Year Party",
-        image: catImages.party,
-        description: "Celebrate with music & dance.",
-      },
-    ],
-    cristmas: [
-      {
-        id: 2,
-        name: "New Year Party",
-        image: catImages.party,
-        description: "Celebrate with music & dance.",
-      },
-    ],
-    food: [
-      {
-        id: 3,
-        name: "Food Festival",
-        image: catImages.food,
-        description: "Try delicious cuisines.",
-      },
-    ],
-    festival: [
-      {
-        id: 4,
-        name: "Diwali Celebration",
-        image: catImages.festival,
-        description: "Festival of lights.",
-      },
-    ],
-    concert: [
-      {
-        id: 5,
-        name: "Live Rock Concert",
-        image: catImages.concert,
-        description: "Experience live music.",
-      },
-    ],
+  const handleEventClick = (eventId) => {
+    navigate(`/EventDetails/${eventId}`);
   };
 
   const events = eventData[CategoryEvent] || [];
@@ -102,29 +118,54 @@ function CategoryEvent() {
 
   if (events.length > 0) {
     content = (
-      <div className="row w-100 m-auto mt-2 justify-content-center">
+      <div className="row w-100 m-auto mt-2 justify-content-start">
         {events.map((event) => (
-          <div className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex flex-column align-items-center mb-3">
-            <div key={event.id} className="event-item d-flex flex-column h-100 w-100">
-              <img src={event.image} alt={event.name} className="event-img" />
+          <div
+            key={event.id}
+            className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex flex-column align-items-center mb-3"
+            onClick={() => handleEventClick(event.id)}
+          >
+            <div className="event-item">
+              {event.image && (
+                <img src={event.image} alt={event.name} className="event-img" />
+              )}
 
               <div className="d-flex flex-column flex-grow-1">
                 <div className="bg-black text-white d-flex align-items-center w-100">
-                  <p className="date-time">
-                    {event.date} , {event.time}
-                  </p>
+                  {event.date && event.time && (
+                    <p className="date-time">
+                      {event.date} , {event.time}
+                    </p>
+                  )}
                 </div>
 
-                <h5 className="event-name">{event.name}</h5>
+                {event.name && <h5 className="event-name">{event.name}</h5>}
 
                 <div className="d-flex align-items-center justify-content-between info">
-                  <div className="text-start location">
-                    <span className="fw-bold text-muted">Location:</span>
-                    <br />
-                    <span className="text-danger">{event.location}</span>
-                  </div>
-                  <div className="fw-bold text-danger">Rs.{event.price}</div>
+                  {event.location && (
+                    <div className="text-start location">
+                      <span className="fw-bold text-muted">Location:</span>
+                      <br />
+                      <span className="text-danger">{event.location}</span>
+                    </div>
+                  )}
+                  {event.price && (
+                    <div className="fw-bold text-danger">Rs.{event.price}</div>
+                  )}
                 </div>
+
+                {/* {Object.entries(event).map(([key, value]) => { // This code is to get all available key values pairs and prine them
+                  if (["id", "name", "image"].includes(key)) return null; // Skip unwanted fields
+                  return (
+                    <div key={key} className="text-start">
+                      <span className="fw-bold text-muted">
+                        {key.charAt(0).toUpperCase() + key.slice(1)}:
+                      </span>
+                      <br />
+                      <span className="text-primary">{value}</span>
+                    </div>
+                  );
+                })} */}
 
                 <div className="mt-auto">
                   <button className="btn btn-warning w-100 fw-bold mt-2">

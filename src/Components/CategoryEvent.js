@@ -79,7 +79,10 @@ export const eventData = {
       id: 401,
       name: "McDonalds",
       image: catImages.food,
-      location: "Ahmedabad",
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Melbourne Cricket Ground, Australia",
+      price: 5990,
     },
   ],
   celebrations: [
@@ -87,8 +90,11 @@ export const eventData = {
       id: 501,
       name: "Diwali Celebration",
       image: catImages.celebrations,
-      description: "Festival of lights.",
-      city: "botad",
+      date: "2025-02-22",
+      time: "07:30",
+      location: "Melbourne Cricket Ground, Australia",
+      price: 2099,
+      
     },
   ],
   concert: [

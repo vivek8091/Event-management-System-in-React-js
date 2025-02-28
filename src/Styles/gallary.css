@@ -1,0 +1,149 @@
+.gallary-title {
+    position: relative;
+    width: 100%;
+    background: url(../assets/about-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 8rem 0;
+}
+
+.gallary-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.gallary-title .content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.gallary-title .content h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffc107;
+}
+
+.gallary-title nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 1rem;
+    font-size: 14px;
+}
+
+.gallary-title nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.gallary-data .image-container {
+    position: relative;
+}
+
+.gallary-data .image-container .img-details {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    text-align: left;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallary-data .image-container .img-details .gallary-content h6 {
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+}
+
+.gallary-data .image-container .img-details .gallary-content p {
+    margin-bottom: 0px;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.gallary-data .image-container .img-details .gallary-icon a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.offers {
+    background-image: url("../assets//gallary//offer-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.offers .tagline h3 {
+    margin-bottom: 0px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.offers .offer-btn button {
+    border: none;
+    outline: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    color: #ff7300;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+
+.offers .offer-btn button:hover {
+    background-color: #ff7300;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.early-access {
+    width: 100%;
+    background-color: rgb(1 0 17);
+    color: #fff;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.early-access h1 {
+    background: linear-gradient(90deg, #f800be, #ffcc33);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.early-access button {
+    padding: 15px 20px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    margin-top: 2rem;
+    transition: 0.5s;
+}
+
+.early-access button:hover{
+    background-color: #fff;
+    color: #ff7300;
+}

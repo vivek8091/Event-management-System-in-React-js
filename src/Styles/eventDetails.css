@@ -1,0 +1,75 @@
+.event-details .event-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.event-details .event-titles{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.event-details .event-titles h1{
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+.event-details .timings{
+    font-weight: 600;
+}
+
+.event-details .pricings{
+    margin-top: 0.5rem;
+
+}
+
+.event-details .dates{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.event-details .dates .start-date{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.event-details .dates .date-icon{
+    font-size: 1.2rem;
+}
+
+.event-details .dates .start-date .date-info p{
+    margin-bottom: 0px;
+}
+
+.event-details .dates .date-info h6{
+    font-weight: 700;
+}
+
+.event-details .location{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.event-details .location .location-icon{
+    font-size: 1.2rem;
+}
+
+.event-details .location .location-info h6{
+    font-weight: 700;
+}
+
+.event-details .location .location-info p{
+    margin-bottom: 0px;
+}

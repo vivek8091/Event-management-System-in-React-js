@@ -70,7 +70,7 @@ export default function Events() {
             <div className="col-lg-4 col-md-4 col-sm-6 col-12 m-auto">
               <div
                 className="category"
-                onClick={() => handleCategoryClick("Festivals")}
+                onClick={() => handleCategoryClick("festivals")}
               >
                 <div className="cat-img">
                   <img

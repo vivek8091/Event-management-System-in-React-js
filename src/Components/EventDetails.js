@@ -20,10 +20,8 @@ function EventDetails() {
 
   return (
     <>
-      <div className="container mt-4">
-        <div className="event-details p-4 shadow rounded">
-          <h2>{selectedEvent.name}</h2>
-
+      <div className="container">
+        <div className="event-details p-4">
           {selectedEvent.image && (
             <img
               src={selectedEvent.image}
@@ -32,14 +30,41 @@ function EventDetails() {
             />
           )}
 
-          <p>
-            <strong>Start Date:</strong> {selectedEvent.date} <br />
-            <strong>Time:</strong> {selectedEvent.time} <br />
-            <strong>Location:</strong> {selectedEvent.location} <br />
-            <strong>Price:</strong> Rs.{selectedEvent.price}
+          <div className="event-titles">
+            <h1>{selectedEvent.name}</h1>
+            <button className="btn btn-primary">Book Ticket</button>
+          </div>
+
+          <p className="pricings">
+            <strong>₹</strong>
+            {selectedEvent.price}
           </p>
 
-          <button className="btn btn-primary">Book Ticket</button>
+          <h5 className="timings">When and Where</h5>
+
+          <div className="dates">
+            <div className="start-date">
+              <div className="date-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+              <div className="date-info">
+                <h6>Date and Time</h6>
+                <p>Start Date : {selectedEvent.date}</p>
+                <p>Start Time : {selectedEvent.time}</p>
+              </div>
+            </div>
+            <div className="end-date"></div>
+          </div>
+
+          <div className="location">
+            <div className="location-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div className="location-info">
+              <h6>Location</h6>
+              <p>{selectedEvent.location}</p>
+            </div>
+          </div>
         </div>
       </div>
     </>

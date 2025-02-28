@@ -22,7 +22,7 @@ export const eventData = {
       date: "2025-02-22",
       time: "07:30",
       location: "Wankhade Cricket Stadium, Mumbai",
-      price: 599,
+      price: 2499,
     },
     {
       id: 102,
@@ -40,7 +40,7 @@ export const eventData = {
       date: "2025-02-22",
       time: "07:30",
       location: "Gokuldhaam Society, Mumbai",
-      price: 599,
+      price: 200,
     },
     {
       id: 104,
@@ -49,7 +49,7 @@ export const eventData = {
       date: "2025-02-22",
       time: "07:30",
       location: "Melbourne Cricket Ground, Australia",
-      price: 599,
+      price: 5000,
     },
   ],
   party: [
@@ -118,7 +118,7 @@ function CategoryEvent() {
 
   if (events.length > 0) {
     content = (
-      <div className="row w-100 m-auto mt-2 justify-content-start">
+      <div className="row p-3 w-100 m-auto mt-2 justify-content-start">
         {events.map((event) => (
           <div
             key={event.id}
@@ -154,7 +154,7 @@ function CategoryEvent() {
                   )}
                 </div>
 
-                {/* {Object.entries(event).map(([key, value]) => { // This code is to get all available key values pairs and prine them
+                {/* {Object.entries(event).map(([key, value]) => { // This code is to get all available key values pairs and print them...
                   if (["id", "name", "image"].includes(key)) return null; // Skip unwanted fields
                   return (
                     <div key={key} className="text-start">

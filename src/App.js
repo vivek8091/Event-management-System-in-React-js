@@ -10,6 +10,9 @@ import Login from "./Components/Login";
 import Layout from "./Components/Layout";
 import CategoryEvent from "./Components/CategoryEvent";
 import EventDetails from "./Components/EventDetails";
+import UserAccountDetails from "./Components/UserAccountDetails";
+import ChangePassword from "./Components/ChangePassword";
+import ChangeAccountDetails from "./Components/ChangeAccountDetails";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
             <Route path="/Login" element={<Login />} />
             <Route path="/Events/:CategoryEvent" element={<CategoryEvent />} />
             <Route path="/EventDetails/:eventId" element={<EventDetails />} />
+            <Route path="/UserAccountDetails" element={<UserAccountDetails />} />
+            <Route path="/ChangePassword" element={<ChangePassword/>}/>
+            <Route path="/ChangeAccountDetails" element={<ChangeAccountDetails/>}/>
           </Route>
         </Routes>
     </>

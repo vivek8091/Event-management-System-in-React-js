@@ -1,0 +1,118 @@
+.user-details {
+    background-color: #000039;
+    color: #fff;
+    height: calc(100vh - 5rem);
+}
+
+.user-details .user-title img {
+    width: 100%;
+    max-width: 20px;
+    display: block;
+}
+
+.user-details .user-title h6 {
+    margin-bottom: 0px;
+}
+
+.user-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #fff;
+    padding: 10px 10px;
+}
+
+.user-details .navigations nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.user-details .navigations nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.user-details .navigations nav a:first-child span i {
+    padding-right: 5px;
+}
+
+.user-details .navigations nav a:last-child {
+    text-decoration: underline;
+}
+
+.user-details .user-data {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #272771;
+    padding: 30px 0;
+}
+
+.user-details .user-data .user-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.user-details .user-data .user-img img {
+    display: block;
+    width: 100%;
+}
+
+.user-details .user-data .user-img span i {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.user-details .user-data .profile-container {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.user-details .user-data .profile-container .profile-list {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.user-details .user-data .profile-container .profile-list .profile-item {
+    padding: 10px 0;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-details .user-data .profile-container .profile-list .profile-item span {
+    margin-left: 15px;
+}
+
+.user-details .user-data .profile-container .profile-list .profile-item i:first-child {
+    font-size: 1.3rem;
+    width: 20px;
+}
+
+.user-details .user-data .profile-container .profile-list .profile-item i:last-child {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.user-details .change-details{
+    text-align: center;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.user-details .change-details nav a{
+    color: #fff;
+}
+

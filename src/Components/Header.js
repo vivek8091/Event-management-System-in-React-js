@@ -23,7 +23,7 @@ function Header() {
         </nav>
 
         <div className="user-profile">
-          <Link className="account">
+          <Link to="/UserAccountDetails" className="account">
             <img src={userLogo} alt="user_logo" className="user-avtar" />
             <span className="username">Sparks User</span>
           </Link>

@@ -96,6 +96,10 @@
     margin-left: 15px;
 }
 
+.user-details .user-data .profile-container .profile-list .profile-item i{
+    line-height: 0;
+}
+
 .user-details .user-data .profile-container .profile-list .profile-item i:first-child {
     font-size: 1.3rem;
     width: 20px;

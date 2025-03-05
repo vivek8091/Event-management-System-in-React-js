@@ -1,3 +1,5 @@
+/* Login page CSS */
+
 .login-form {
     width: 100%;
     max-width: 450px;
@@ -7,14 +9,62 @@
     transform: translate(-50%, -50%);
 }
 
-.login-form .register-links {
+.login-form .register-links nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 10px;
 }
 
-.login-form .register-links a{
+.login-form .register-links nav a {
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+/* Registration / SignUp page CSS */
+
+.signup-form {
+    width: 100%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signup-form .signup-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signup-form .signup-title .sign-logo {
+    width: 20px;
+    height: 20px;
+    background: rgb(84 79 167);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 20px 20px;
+}
+
+.signup-form .signup-title .sign-logo i{
+    font-size: 1rem;
+    color: #fff;
+}
+
+.signup-form .login-link nav {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-top: 10px;
+}
+
+.signup-form .login-link nav a {
     text-decoration: none;
     font-size: 14px;
 }

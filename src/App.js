@@ -14,6 +14,7 @@ import UserAccountDetails from "./Components/UserAccountDetails";
 import ChangePassword from "./Components/ChangePassword";
 import ChangeAccountDetails from "./Components/ChangeAccountDetails";
 import Registration from "./Components/Registration";
+import MyBooking from "./Components/MyBooking";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/Registration" element={<Registration/>}/>
             <Route path="/Events/:CategoryEvent" element={<CategoryEvent />} />
             <Route path="/EventDetails/:eventId" element={<EventDetails />} />
+            <Route path="/MyBooking" element={<MyBooking/>}/>
             <Route path="/UserAccountDetails" element={<UserAccountDetails />} />
             <Route path="/ChangePassword" element={<ChangePassword/>}/>
             <Route path="/ChangeAccountDetails" element={<ChangeAccountDetails/>}/>

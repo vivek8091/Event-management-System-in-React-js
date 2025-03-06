@@ -19,6 +19,7 @@ function Header() {
           <Link to="/Events">Events</Link>
           <Link to="/Gallary">Gallary</Link>
           <Link to="/Contact">Contact</Link>
+          <Link to="/MyBooking">My Bookings</Link>
           <Link to="/Login">Login</Link>
         </nav>
 

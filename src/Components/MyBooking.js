@@ -154,7 +154,11 @@ function MyBooking() {
 
               <div>
                 <strong>Location:</strong>
-                <span className="blue-text">Motera Stadium vnkdg hufdhg hedjughdg glgjughsghgs hgujhgsg sghg ghg gjkgu gsgkj gh  gftghdh fh hfh hdtyr hdtydry , Ahemdabad</span>
+                <span className="blue-text">
+                  Motera Stadium vnkdg hufdhg hedjughdg glgjughsghgs hgujhgsg
+                  sghg ghg gjkgu gsgkj gh gftghdh fh hfh hdtyr hdtydry ,
+                  Ahemdabad
+                </span>
               </div>
               <div>
                 <strong>Booking Date:</strong>

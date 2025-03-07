@@ -1,0 +1,32 @@
+.contact-form {
+    width: 100%;
+    max-width: 450px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-form .contact-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form .contact-title .contact-logo {
+    width: 20px;
+    height: 20px;
+    background: rgb(84 79 167);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 20px 20px;
+}
+
+.contact-form .contact-title .contact-logo i{
+    font-size: 1rem;
+    color: #fff;
+}

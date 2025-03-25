@@ -15,7 +15,7 @@ function Gallary() {
     <>
       <div className="gallary-title">
         <div className="content">
-          <h1>Events</h1>
+          <h1>Gallary</h1>
         </div>
 
         <nav>

@@ -13,24 +13,24 @@ function Registration() {
         </div>
         <form>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">
+            <label for="inputName" class="form-label">
               Full Name
             </label>
             <input
               type="text"
               class="form-control"
-              id="exampleInputName1"
+              id="inputName"
               aria-describedby="NameHelp"
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">
+            <label for="inputEmail" class="form-label">
               Email
             </label>
             <input
               type="text"
               class="form-control"
-              id="exampleInputName1"
+              id="inputEmail"
               aria-describedby="EmailHelp"
             />
           </div>
@@ -53,7 +53,7 @@ function Registration() {
                 name="flexRadioDefault"
                 id="female"
               />
-              <label for="male" className="form-check-label">
+              <label for="female" className="form-check-label">
                 Female
               </label>
             </div>
@@ -64,19 +64,19 @@ function Registration() {
                 name="flexRadioDefault"
                 id="other"
               />
-              <label for="male" className="form-check-label">
+              <label for="other" className="form-check-label">
                 Other
               </label>
             </div>
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">
+            <label for="inputPhone" class="form-label">
               Phone Number
             </label>
             <input
-              type="password"
+              type="number"
               class="form-control"
-              id="exampleInputPhone1"
+              id="inputPhone"
             />
           </div>
           <div class="mb-3">
@@ -93,9 +93,9 @@ function Registration() {
             <input
               type="checkbox"
               class="form-check-input"
-              id="exampleCheck1"
+              id="rememberMe"
             />
-            <label class="form-check-label" for="exampleCheck1">
+            <label class="form-check-label" for="rememberMe">
               Remember Me
             </label>
           </div>

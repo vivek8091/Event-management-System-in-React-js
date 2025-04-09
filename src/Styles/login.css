@@ -28,12 +28,12 @@
     width: 100%;
     max-width: 450px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.signup-form .signup-title{
+.signup-form .signup-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,7 @@
     padding: 20px 20px;
 }
 
-.signup-form .signup-title .sign-logo i{
+.signup-form .signup-title .sign-logo i {
     font-size: 1rem;
     color: #fff;
 }
@@ -69,6 +69,37 @@
     font-size: 14px;
 }
 
+.file-input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #007bff;
+    padding: 2px;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.custom-file-label {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.file-name {
+    flex-grow: 1;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+}
+
+.choose-btn {
+    font-weight: 600;
+}
+
 
 /* Change Password Page CSS */
 
@@ -81,7 +112,7 @@
     transform: translate(-50%, -50%);
 }
 
-.change-pass .pass-title{
+.change-pass .pass-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,7 +131,7 @@
     padding: 20px 20px;
 }
 
-.change-pass .pass-title .pass-logo i{
+.change-pass .pass-title .pass-logo i {
     font-size: 1.2rem;
     color: #fff;
 }

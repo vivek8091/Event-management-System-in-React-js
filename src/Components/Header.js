@@ -14,13 +14,13 @@ function Header() {
         </div>
 
         <nav className="nav-links">
-          <Link to="/">Home</Link>
+          <Link to="/Home">Home</Link>
           <Link to="/About">About</Link>
           <Link to="/Events">Events</Link>
           <Link to="/Gallary">Gallary</Link>
           <Link to="/Contact">Contact</Link>
           <Link to="/MyBooking">My Bookings</Link>
-          <Link to="/Login">Login</Link>
+          <Link to="/">Login</Link>
         </nav>
 
         <div className="user-profile">

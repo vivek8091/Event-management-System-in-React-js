@@ -45,7 +45,7 @@ function EventDetails() {
           <div className="dates">
             <div className="start-date">
               <div className="date-icon">
-                <i class="fa-solid fa-calendar-days"></i>
+                <i className="fa-solid fa-calendar-days"></i>
               </div>
               <div className="date-info">
                 <h6>Date and Time</h6>
@@ -58,7 +58,7 @@ function EventDetails() {
 
           <div className="location">
             <div className="location-icon">
-              <i class="fa-solid fa-location-dot"></i>
+              <i className="fa-solid fa-location-dot"></i>
             </div>
             <div className="location-info">
               <h6>Location</h6>

@@ -21,54 +21,54 @@ function Contact() {
         <div className="contact-form">
           <div className="contact-title">
             <div className="contact-logo">
-              <i class="fa-solid fa-user-lock"></i>
+              <i className="fa-solid fa-user-lock"></i>
             </div>
             <h5>Contact Us</h5>
           </div>
           <form>
-            <div class="mb-3">
-              <label for="exampleInputName1" class="form-label">
+            <div className="mb-3">
+              <label for="exampleInputName1" className="form-label">
                 Name
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleInputName1"
                 aria-describedby="NameHelp"
               />
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">
+            <div className="mb-3">
+              <label for="email" className="form-label">
                 Email
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="email"
                 aria-describedby="EmailHelp"
               />
             </div>
-            <div class="mb-3">
-              <label for="country" class="form-label">
+            <div className="mb-3">
+              <label for="country" className="form-label">
                 Country
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="country"
               />
             </div>
-            <div class="mb-3">
-              <label for="phoneNumber" class="form-label">
+            <div className="mb-3">
+              <label for="phoneNumber" className="form-label">
                 Phone Number
               </label>
               <input
                 type="number"
-                class="form-control"
+                className="form-control"
                 id="phoneNumber"
               />
             </div>
-            <button type="submit" class="btn btn-primary w-100">
+            <button type="submit" className="btn btn-primary w-100">
               Contact Us
             </button>
           </form>

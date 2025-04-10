@@ -1,6 +1,6 @@
 import ScrollToTop from "./Components/ScrollTop";
 import "./App.css";
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Events from "./Components/Events";
@@ -19,24 +19,27 @@ import MyBooking from "./Components/MyBooking";
 function App() {
   return (
     <>
-        <ScrollToTop />
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Events" element={<Events />} />
-            <Route path="/Gallary" element={<Gallary />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Registration" element={<Registration/>}/>
-            <Route path="/Events/:CategoryEvent" element={<CategoryEvent />} />
-            <Route path="/EventDetails/:eventId" element={<EventDetails />} />
-            <Route path="/MyBooking" element={<MyBooking/>}/>
-            <Route path="/UserAccountDetails" element={<UserAccountDetails />} />
-            <Route path="/ChangePassword" element={<ChangePassword/>}/>
-            <Route path="/ChangeAccountDetails" element={<ChangeAccountDetails/>}/>
-          </Route>
-        </Routes>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Login />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Events" element={<Events />} />
+          <Route path="/Gallary" element={<Gallary />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Registration" element={<Registration />} />
+          <Route path="/Events/:CategoryEvent" element={<CategoryEvent />} />
+          <Route path="/EventDetails/:eventId" element={<EventDetails />} />
+          <Route path="/MyBooking" element={<MyBooking />} />
+          <Route path="/UserAccountDetails" element={<UserAccountDetails />} />
+          <Route path="/ChangePassword" element={<ChangePassword />} />
+          <Route
+            path="/ChangeAccountDetails"
+            element={<ChangeAccountDetails />}
+          />
+        </Route>
+      </Routes>
     </>
   );
 }

@@ -45,7 +45,7 @@ function Gallary() {
                   </div>
                   <div className="gallary-icon">
                     <a href="/">
-                      <i class="fa-solid fa-circle-info"></i>
+                      <i className="fa-solid fa-circle-info"></i>
                     </a>
                   </div>
                 </div>

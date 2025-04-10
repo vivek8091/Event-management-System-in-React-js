@@ -21,7 +21,7 @@ function Registration() {
         [name]: files[0],
       });
     } else {
-      setFormData((prevData) => ({
+      setFormData((formData) => ({
         ...formData,
         [name]: value,
       }));

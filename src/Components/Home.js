@@ -31,9 +31,9 @@ function Home() {
               </p>
             </div>
 
-            <div class="col-lg-5">
-              <form action="" class="email-form">
-                <div class="sign-up-form">
+            <div className="col-lg-5">
+              <form action="" className="email-form">
+                <div className="sign-up-form">
                   <input type="email" name="email" />
                   <input type="submit" value="Subscribe" />
                 </div>

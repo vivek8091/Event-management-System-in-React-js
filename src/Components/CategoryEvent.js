@@ -1,125 +1,53 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import {
+  useParams,
+  Link,
+  useNavigate,
+} from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "../Styles/categoryEvent.css";
+import axios from "axios";
 
-export const catImages = {
-  ipl: require("../assets/events/ipl.jpg"),
-  mcg: require("../assets/events/mcg.jpg"),
-  ahmedabad: require("../assets/events/ahmedabad.webp"),
-  cricket: require("../assets/events/cricket.jpg"),
-  party: require("../assets/events/newYear.jpg"),
-  festivals: require("../assets/events/cristmas2.jpg"),
-  food: require("../assets/events/food.jpg"),
-  celebrations: require("../assets/events/diwali.jpg"),
-  concert: require("../assets/events/concert.jpg"),
-};
-
-export const eventData = {
-  cricket: [
-    {
-      id: 101,
-      name: "Indian Premier League",
-      image: catImages.ipl,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Wankhade Cricket Stadium, Mumbai",
-      price: 2499,
-    },
-    {
-      id: 102,
-      name: "Women Premier League",
-      image: catImages.ahmedabad,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Narendra Modi Stadium, Ahmedabad",
-      price: 599,
-    },
-    {
-      id: 103,
-      name: "Gokuldhaam Premier League",
-      image: catImages.cricket,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Gokuldhaam Society, Mumbai",
-      price: 200,
-    },
-    {
-      id: 104,
-      name: "Big Bash League",
-      image: catImages.mcg,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Melbourne Cricket Ground, Australia",
-      price: 5000,
-    },
-  ],
-  party: [
-    {
-      id: 201,
-      name: "New Year Party",
-      image: catImages.party,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Melbourne Cricket Ground, Australia",
-      price: 599,
-    },
-  ],
-  festivals: [
-    {
-      id: 301,
-      name: "Cristmas",
-      image: catImages.festivals,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Melbourne Cricket Ground, Australia",
-      price: 599,
-    },
-  ],
-  food: [
-    {
-      id: 401,
-      name: "McDonalds",
-      image: catImages.food,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Melbourne Cricket Ground, Australia",
-      price: 5990,
-    },
-  ],
-  celebrations: [
-    {
-      id: 501,
-      name: "Diwali Celebration",
-      image: catImages.celebrations,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Melbourne Cricket Ground, Australia",
-      price: 2099,
-      
-    },
-  ],
-  concert: [
-    {
-      id: 601,
-      name: "New Year Party",
-      image: catImages.concert,
-      date: "2025-02-22",
-      time: "07:30",
-      location: "Melbourne Cricket Ground, Australia",
-      price: 599,
-    },
-  ],
-};
-
+// export const catImages = {
+//   ipl: require("../assets/events/ipl.jpg"),
+//   mcg: require("../assets/events/mcg.jpg"),
+//   ahmedabad: require("../assets/events/ahmedabad.webp"),
+//   cricket: require("../assets/events/cricket.jpg"),
+//   party: require("../assets/events/newYear.jpg"),
+//   festivals: require("../assets/events/cristmas2.jpg"),
+//   food: require("../assets/events/food.jpg"),
+//   celebrations: require("../assets/events/diwali.jpg"),
+//   concert: require("../assets/events/concert.jpg"),
+// };
 
 function CategoryEvent() {
+  const [events, setEvents] = useState([]);
   const { CategoryEvent } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:2121/api/events/getEventByCategory/${CategoryEvent}`
+        );
+        setEvents(response.data.data);
+        console.log(response.data.data);
+        
+        console.log("CategoryEvent param:", CategoryEvent);
+
+      } catch (error) {
+        console.error("Error fetching events!!!", error);
+      }
+    };
+
+    fetchEvents();
+  }, [CategoryEvent]);
+
 
   const handleEventClick = (eventId) => {
     navigate(`/EventDetails/${eventId}`);
   };
 
-  const events = eventData[CategoryEvent] || [];
   let content;
 
   if (events.length > 0) {
@@ -132,47 +60,33 @@ function CategoryEvent() {
             onClick={() => handleEventClick(event.id)}
           >
             <div className="event-item">
-              {event.image && (
-                <img src={event.image} alt={event.name} className="event-img" />
+              {event.event_image && (
+                <img src={`http://localhost:2121/uploads/${event.event_image}`} alt={event.event_image} className="event-img" />
               )}
 
               <div className="d-flex flex-column flex-grow-1">
                 <div className="bg-black text-white d-flex align-items-center w-100">
-                  {event.date && event.time && (
+                  {event.event_start_date && event.event_start_time && (
                     <p className="date-time">
-                      {event.date} , {event.time}
+                      {event.event_start_date} , {event.event_start_time}
                     </p>
                   )}
                 </div>
 
-                {event.name && <h5 className="event-name">{event.name}</h5>}
+                {event.event_title && <h5 className="event-name">{event.event_title}</h5>}
 
                 <div className="d-flex align-items-center justify-content-between info">
-                  {event.location && (
+                  {event.event_location && (
                     <div className="text-start location">
                       <span className="fw-bold text-muted">Location:</span>
                       <br />
-                      <span className="text-danger">{event.location}</span>
+                      <span className="text-danger">{event.event_location}</span>
                     </div>
                   )}
-                  {event.price && (
-                    <div className="fw-bold text-danger">Rs.{event.price}</div>
+                  {event.event_price && (
+                    <div className="fw-bold text-danger">Rs.{event.event_price}</div>
                   )}
                 </div>
-
-                {/* {Object.entries(event).map(([key, value]) => { // This code is to get all available key values pairs and print them...
-                  if (["id", "name", "image"].includes(key)) return null; // Skip unwanted fields
-                  return (
-                    <div key={key} className="text-start">
-                      <span className="fw-bold text-muted">
-                        {key.charAt(0).toUpperCase() + key.slice(1)}:
-                      </span>
-                      <br />
-                      <span className="text-primary">{value}</span>
-                    </div>
-                  );
-                })} */}
-
                 <div className="mt-auto">
                   <button className="btn btn-warning w-100 fw-bold mt-2">
                     Book Ticket →

@@ -1,18 +1,18 @@
 import "../Styles/eventDetails.css";
 import { useParams } from "react-router-dom";
-import { eventData } from "./CategoryEvent";
+// import { eventData } from "./CategoryEvent";
 // import { catImages } from "./CategoryEvent";
 
 function EventDetails() {
   const { eventId } = useParams(); // Get eventId from URL
   let selectedEvent = null;
 
-  Object.values(eventData).forEach((category) => {
-    const foundEvent = category.find(
-      (event) => event.id.toString() === eventId
-    );
-    if (foundEvent) selectedEvent = foundEvent;
-  });
+  // Object.values(eventData).forEach((category) => {
+  //   const foundEvent = category.find(
+  //     (event) => event.id.toString() === eventId
+  //   );
+  //   if (foundEvent) selectedEvent = foundEvent;
+  // });
 
   if (!selectedEvent) {
     return <p>Event not found</p>;

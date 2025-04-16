@@ -1,73 +1,79 @@
+import { useEffect, useState } from "react";
 import "../Styles/eventDetails.css";
 import { useParams } from "react-router-dom";
-// import { eventData } from "./CategoryEvent";
-// import { catImages } from "./CategoryEvent";
+import axios from "axios";
 
 function EventDetails() {
-  const { eventId } = useParams(); // Get eventId from URL
-  let selectedEvent = null;
+  const { eventId } = useParams();
+  const [selectedEvent, setSelectedEvent] = useState([]);
 
-  // Object.values(eventData).forEach((category) => {
-  //   const foundEvent = category.find(
-  //     (event) => event.id.toString() === eventId
-  //   );
-  //   if (foundEvent) selectedEvent = foundEvent;
-  // });
+  useEffect(() => {
+    const fetchEventById = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:2121/api/events/getEventById/${eventId}`
+        );
+        console.log(res.data);
 
-  if (!selectedEvent) {
-    return <p>Event not found</p>;
-  }
+        setSelectedEvent(res.data.data);
+      } catch (error) {
+        console.error("Error while fetching events details!!!");
+      }
+    };
+    fetchEventById();
+  }, [eventId]);
+  console.log("Selected Event Data:", selectedEvent);
 
   return (
-    <>
+    
       <div className="container">
-        <div className="event-details p-4">
-          {selectedEvent.image && (
+        {selectedEvent.map((event, index) => (
+          <div key={event.id} className="event-details p-4">
             <img
-              src={selectedEvent.image}
-              alt={selectedEvent.name}
+              src={`http://localhost:2121/uploads/${event.event_image}`}
+              alt={event.event_image}
               className="event-img"
             />
-          )}
 
-          <div className="event-titles">
-            <h1>{selectedEvent.name}</h1>
-            <button className="btn btn-primary">Book Ticket</button>
-          </div>
+            <div className="event-titles">
+              <h1>{event.event_title}</h1>
+              <button className="btn btn-primary">Book Ticket</button>
+            </div>
 
-          <p className="pricings">
-            <strong>₹</strong>
-            {selectedEvent.price}
-          </p>
+            <p className="pricings">
+              <strong>₹</strong>
+              {event.event_price}
+            </p>
 
-          <h5 className="timings">When and Where</h5>
+            <h5 className="timings">When and Where</h5>
 
-          <div className="dates">
-            <div className="start-date">
-              <div className="date-icon">
-                <i className="fa-solid fa-calendar-days"></i>
+            <div className="dates">
+              <div className="start-date">
+                <div className="date-icon">
+                  <i className="fa-solid fa-calendar-days"></i>
+                </div>
+                <div className="date-info">
+                  <h6>Date and Time</h6>
+                  <p>Start Date : {event.event_start_date}</p>
+                  <p>Start Time : {event.event_start_time}</p>
+                </div>
               </div>
-              <div className="date-info">
-                <h6>Date and Time</h6>
-                <p>Start Date : {selectedEvent.date}</p>
-                <p>Start Time : {selectedEvent.time}</p>
+              <div className="end-date"></div>
+            </div>
+
+            <div className="location">
+              <div className="location-icon">
+                <i className="fa-solid fa-location-dot"></i>
+              </div>
+              <div className="location-info">
+                <h6>Location</h6>
+                <p>{event.event_location}</p>
               </div>
             </div>
-            <div className="end-date"></div>
           </div>
-
-          <div className="location">
-            <div className="location-icon">
-              <i className="fa-solid fa-location-dot"></i>
-            </div>
-            <div className="location-info">
-              <h6>Location</h6>
-              <p>{selectedEvent.location}</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </>
+    
   );
 }
 

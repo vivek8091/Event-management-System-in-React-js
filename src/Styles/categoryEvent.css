@@ -13,12 +13,12 @@
     object-fit: cover;
 }
 
-.date-time{
+.date-time {
     margin-bottom: 0px;
     padding: 2px 8px;
 }
 
-.event-name{
+.event-name {
     margin-left: 5px;
     margin-top: 0.8rem;
 }
@@ -32,8 +32,12 @@
     padding-right: 10px;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-  }
+}
 
-.location{
+.info .pricings strong{
+    margin-right: 3px;
+}
+
+.location {
     max-width: 80%;
 }

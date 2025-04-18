@@ -54,7 +54,15 @@ function CategoryEvent() {
                 <div className="bg-black text-white d-flex align-items-center w-100">
                   {event.event_start_date && event.event_start_time && (
                     <p className="date-time">
-                      {event.event_start_date} , {event.event_start_time}
+                      {new Date(event.event_start_date).toLocaleDateString(
+                        "en-IN",
+                        {
+                          day: "2-digit",
+                          month: "long",
+                          year: "numeric",
+                        }
+                      )}
+                      , {event.event_start_time}
                     </p>
                   )}
                 </div>
@@ -75,7 +83,12 @@ function CategoryEvent() {
                   )}
                   {event.event_price && (
                     <div className="fw-bold text-danger">
-                      Rs.{event.event_price}
+                      <p className="pricings">
+                        <strong>
+                          <i className="fa-solid fa-indian-rupee-sign"></i>
+                        </strong>
+                        {event.event_price?.toLocaleString("en-IN")}
+                      </p>
                     </div>
                   )}
                 </div>

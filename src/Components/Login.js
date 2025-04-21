@@ -22,7 +22,11 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:2121/api/users/login/", loginData);
+      const res = await axios.post(
+        "http://localhost:2121/api/users/login/",
+        loginData
+      );
+      localStorage.setItem("user", JSON.stringify(res.data.user));
       alert(res.data.message);
       console.log("Logged in user:", res.data.user);
       navigate("/Home");

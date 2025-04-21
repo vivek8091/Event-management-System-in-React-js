@@ -1,16 +1,16 @@
+import { useEffect, useState } from "react";
 import "../Styles/userAccountDetails.css";
 import userDetails from "../assets/userDetails.png";
-import logo from "../assets/userLogo.png";
 import { Link } from "react-router-dom";
 
-const userData = {
-  name: "Spark User",
-  email: "sparkuser@gmail.com",
-  gender: "Male",
-  contact: "9001989898",
-};
-
 function UserAccountDetails() {
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    setUserData(storedUser);
+  }, []);
+
   return (
     <>
       <div className="row">
@@ -37,7 +37,10 @@ function UserAccountDetails() {
 
             <div className="user-data">
               <div className="user-img">
-                <img src={logo} alt="user_logo" />
+                <img
+                  src={`http://localhost:2121/uploads/${userData.image}`}
+                  alt="user_logo"
+                />
                 <span>
                   <i className="fa-solid fa-camera-rotate"></i>
                 </span>
@@ -62,7 +65,7 @@ function UserAccountDetails() {
                   </li>
                   <li className="profile-item">
                     <i className="fa-solid fa-phone-volume"></i>
-                    <span>{userData.contact}</span>
+                    <span>{userData.mobile_no}</span>
                     <i className="fa-solid fa-pen"></i>
                   </li>
                 </ul>

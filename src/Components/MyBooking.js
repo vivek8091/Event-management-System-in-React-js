@@ -6,15 +6,12 @@ function MyBooking() {
     <>
       <div className="booking-wrapper mt-5 mb-5">
         <div className="booking-container">
-          {/* Left Section - QR Code */}
           <div className="qr-section">
             <div className="qr-img">
               <img src={qrCode} alt="QR Code" className="qr-code" />
             </div>
             <button className="delete-btn">Delete</button>
           </div>
-
-          {/* Right Section - Booking Details in Two Columns */}
           <div className="details-section">
             <div className="details-grid">
               <div>
@@ -48,15 +45,12 @@ function MyBooking() {
         </div>
 
         <div className="booking-container">
-          {/* Left Section - QR Code */}
           <div className="qr-section">
             <div className="qr-img">
               <img src={qrCode} alt="QR Code" className="qr-code" />
             </div>
             <button className="delete-btn">Delete</button>
           </div>
-
-          {/* Right Section - Booking Details in Two Columns */}
           <div className="details-section">
             <div className="details-grid">
               <div>
@@ -90,15 +84,12 @@ function MyBooking() {
         </div>
 
         <div className="booking-container">
-          {/* Left Section - QR Code */}
           <div className="qr-section">
             <div className="qr-img">
               <img src={qrCode} alt="QR Code" className="qr-code" />
             </div>
             <button className="delete-btn">Delete</button>
           </div>
-
-          {/* Right Section - Booking Details in Two Columns */}
           <div className="details-section">
             <div className="details-grid">
               <div>
@@ -132,15 +123,12 @@ function MyBooking() {
         </div>
 
         <div className="booking-container">
-          {/* Left Section - QR Code */}
           <div className="qr-section">
             <div className="qr-img">
               <img src={qrCode} alt="QR Code" className="qr-code" />
             </div>
             <button className="delete-btn">Delete</button>
           </div>
-
-          {/* Right Section - Booking Details in Two Columns */}
           <div className="details-section">
             <div className="details-grid">
               <div>

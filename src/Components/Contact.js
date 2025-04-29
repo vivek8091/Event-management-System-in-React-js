@@ -8,6 +8,7 @@ function Contact() {
     email: "",
     country: "",
     phone_no: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -33,6 +34,7 @@ function Contact() {
         email: "",
         country: "",
         phone_no: "",
+        message: "",
       });
     } catch (error) {
       console.error("Count not post contact!!!", error);
@@ -104,6 +106,17 @@ function Contact() {
                 id="phoneNumber"
               />
             </div>
+            <div className="form-floating mb-3">
+            <textarea
+              className="form-control"
+              placeholder="Leave a message here..."
+              id="floatingTextarea"
+              name="message"
+              value={getContacts.message}
+              onChange={handleChange}
+            ></textarea>
+            <label htmlFor="floatingTextarea">Message</label>
+          </div>
             <button type="submit" className="btn btn-primary w-100">
               Contact Us
             </button>

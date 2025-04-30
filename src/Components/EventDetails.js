@@ -1,11 +1,87 @@
 import { useEffect, useState } from "react";
 import "../Styles/eventDetails.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Cookies from "js-cookie";
 import axios from "axios";
+import { Toast } from "bootstrap";
+
+const loadScript = (src) => {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+};
 
 function EventDetails() {
+  const navigate = useNavigate();
   const { eventId } = useParams();
   const [selectedEvent, setSelectedEvent] = useState([]);
+
+  // Razorpay Logic...
+  const displayRazorpay = async (amount, eventData) => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    if (!res) {
+      alert("You are offline");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_dEYhZg38SrkYMD",
+      currency: "INR",
+      amount: amount * 100,
+      name: "data",
+      description: "Thanks for buying products from our website",
+      image:
+        "https://res.cloudinary.com/dtdlad1ud/image/upload/v1707733051/uhwydfqry5wqwkaazbbk.jpg",
+      handler: async function (response) {
+        const bookingData = {
+          event_id: eventData.id,
+          user_id: JSON.parse(localStorage.getItem("user")).id,
+          booking_title: eventData.event_title,
+          ticket_id: response.razorpay_payment_id, // or generate your own ticket ID
+          event_date_time: eventData.event_start_date,
+          event_location: eventData.event_location,
+          booking_date: new Date().toISOString().slice(0, 10), // today's date
+          booking_price: eventData.event_price,
+          booking_image: eventData.event_image,
+        };
+        await axios
+          .post(
+            "http://localhost:2121/api/bookings/createBooking/",
+            bookingData,
+            {
+              headers: {
+                Authorization: Cookies.get("accessToken"),
+              },
+            }
+          )
+          .then((res) => {
+            // Toast.success(res.data.message);
+            navigate("/MyBooking");
+          })
+          .catch((err) => {
+            if (err.response) {
+              console.error("Booking API Error:", err.response.data);
+              alert(`Error: ${err.response.data.message || "Booking failed"}`);
+            } else {
+              console.error("Booking API Error:", err.message);
+              alert(`Error: ${err.message}`);
+            }
+          });
+      },
+      prefill: {
+        name: "hello",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
 
   const handleTime = (timeString) => {
     const [hour, minute] = timeString.split(":");
@@ -56,7 +132,12 @@ function EventDetails() {
 
           <div className="event-titles">
             <h2>{event.event_title}</h2>
-            <button className="btn btn-primary">Book Ticket</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => displayRazorpay(event.event_price, event)}
+            >
+              Book Ticket
+            </button>
           </div>
 
           <p className="pricings">

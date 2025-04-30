@@ -1,169 +1,126 @@
+import { useEffect, useState } from "react";
 import "../Styles/myBooking.css";
-import qrCode from "../assets/qr-code.png";
+import axios from "axios";
 
 function MyBooking() {
+  const [bookings, setBookings] = useState([]);
+  const user = JSON.parse(localStorage.getItem("user"));
+  const user_id = user?.id;
+
+  useEffect(() => {
+    const fetchBookings = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:2121/api/bookings/getBookingsByUser/${user_id}`
+        );
+        setBookings(response.data.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error while fetching bookings!!!", error);
+      }
+    };
+    fetchBookings();
+  }, [user_id]);
+
+  const formatDateTime = (dateTimeString) => {
+    const date = new Date(dateTimeString);
+
+    const formattedDate = date.toLocaleDateString("en-IN", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+
+    const formattedTime = date.toLocaleTimeString("en-IN", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+
+    return `${formattedDate}, ${formattedTime}`; // Example: "30 Apr, 2025 11:45 AM"
+  };
+
+  const handleDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-IN", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
+
+  const deleteBooking = async (bookingId) => {
+    if (window.confirm("Are you sure you want to delete this booking?")) {
+      try {
+        await axios.delete(
+          `http://localhost:2121/api/bookings/deleteBooking/${bookingId}`
+        );
+        alert("Booking deleted successfully...");
+        setBookings((prevBookings) =>
+          prevBookings.filter((booking) => booking.id !== bookingId)
+        );
+      } catch (error) {
+        console.error("Error while deleting booking!!!", error);
+        alert("Failed to delete booking!!!");
+      }
+    }
+  };
+
   return (
     <>
       <div className="booking-wrapper mt-5 mb-5">
-        <div className="booking-container">
-          <div className="qr-section">
-            <div className="qr-img">
-              <img src={qrCode} alt="QR Code" className="qr-code" />
-            </div>
-            <button className="delete-btn">Delete</button>
-          </div>
-          <div className="details-section">
-            <div className="details-grid">
-              <div>
-                <strong>Ticket ID:</strong>
-                <span className="blue-text">66f120d8512050c216db$</span>
+        {bookings.length === 0 ? (
+          <p>No bookings found!!!</p>
+        ) : (
+          bookings.map((booking) => (
+            <div key={booking.id} className="booking-container">
+              <div className="qr-section">
+                <div className="qr-img">
+                  <img
+                    src={`http://localhost:2121/uploads/${booking.booking_image}`}
+                    alt="booking_image"
+                    className="qr-code"
+                  />
+                </div>
+                <button className="delete-btn" onClick={() => deleteBooking(booking.id)}>Delete</button>
               </div>
-              <div>
-                <strong>Date & Time:</strong>
-                <span className="blue-text">2024-05-09, 11:11</span>
-              </div>
+              <div className="details-section">
+                <div className="details-grid">
+                  <div>
+                    <strong>Ticket ID:</strong>
+                    <span className="blue-text">{booking.ticket_id}</span>
+                  </div>
+                  <div>
+                    <strong>Date & Time:</strong>
+                    <span className="blue-text">
+                      {formatDateTime(booking.event_date_time)}
+                    </span>
+                  </div>
 
-              <div>
-                <strong>Location:</strong>
-                <span className="blue-text">Motera Stadium, Ahemdabad</span>
-              </div>
-              <div>
-                <strong>Booking Date:</strong>
-                <span className="blue-text">23/09/2024</span>
-              </div>
+                  <div>
+                    <strong>Location:</strong>
+                    <span className="blue-text">{booking.event_location}</span>
+                  </div>
+                  <div>
+                    <strong>Booking Date:</strong>
+                    <span className="blue-text">
+                      {handleDate(booking.booking_date)}
+                    </span>
+                  </div>
 
-              <div>
-                <strong>Price:</strong>
-                <span className="blue-text">₹ 2499</span>
-              </div>
-              <div>
-                <strong>Title:</strong>
-                <span className="blue-text">INDIAN PREMIER LEAGUE</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="booking-container">
-          <div className="qr-section">
-            <div className="qr-img">
-              <img src={qrCode} alt="QR Code" className="qr-code" />
-            </div>
-            <button className="delete-btn">Delete</button>
-          </div>
-          <div className="details-section">
-            <div className="details-grid">
-              <div>
-                <strong>Ticket ID:</strong>
-                <span className="blue-text">66f120d8512050c216db$</span>
-              </div>
-              <div>
-                <strong>Date & Time:</strong>
-                <span className="blue-text">2024-05-09, 11:11</span>
-              </div>
-
-              <div>
-                <strong>Location:</strong>
-                <span className="blue-text">Motera Stadium, Ahemdabad</span>
-              </div>
-              <div>
-                <strong>Booking Date:</strong>
-                <span className="blue-text">23/09/2024</span>
-              </div>
-
-              <div>
-                <strong>Price:</strong>
-                <span className="blue-text">₹ 2499</span>
-              </div>
-              <div>
-                <strong>Title:</strong>
-                <span className="blue-text">INDIAN PREMIER LEAGUE</span>
+                  <div>
+                    <strong>Price:</strong>
+                    <span className="blue-text">₹ {booking.booking_price}</span>
+                  </div>
+                  <div>
+                    <strong>Title:</strong>
+                    <span className="blue-text">{booking.booking_title}</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="booking-container">
-          <div className="qr-section">
-            <div className="qr-img">
-              <img src={qrCode} alt="QR Code" className="qr-code" />
-            </div>
-            <button className="delete-btn">Delete</button>
-          </div>
-          <div className="details-section">
-            <div className="details-grid">
-              <div>
-                <strong>Ticket ID:</strong>
-                <span className="blue-text">66f120d8512050c216db$</span>
-              </div>
-              <div>
-                <strong>Date & Time:</strong>
-                <span className="blue-text">2024-05-09, 11:11</span>
-              </div>
-
-              <div>
-                <strong>Location:</strong>
-                <span className="blue-text">Motera Stadium, Ahemdabad</span>
-              </div>
-              <div>
-                <strong>Booking Date:</strong>
-                <span className="blue-text">23/09/2024</span>
-              </div>
-
-              <div>
-                <strong>Price:</strong>
-                <span className="blue-text">₹ 2499</span>
-              </div>
-              <div>
-                <strong>Title:</strong>
-                <span className="blue-text">INDIAN PREMIER LEAGUE</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="booking-container">
-          <div className="qr-section">
-            <div className="qr-img">
-              <img src={qrCode} alt="QR Code" className="qr-code" />
-            </div>
-            <button className="delete-btn">Delete</button>
-          </div>
-          <div className="details-section">
-            <div className="details-grid">
-              <div>
-                <strong>Ticket ID:</strong>
-                <span className="blue-text">66f120d8512050c216db$</span>
-              </div>
-              <div>
-                <strong>Date & Time:</strong>
-                <span className="blue-text">2024-05-09, 11:11</span>
-              </div>
-
-              <div>
-                <strong>Location:</strong>
-                <span className="blue-text">
-                  Motera Stadium vnkdg hufdhg hedjughdg glgjughsghgs hgujhgsg
-                  sghg ghg gjkgu gsgkj gh gftghdh fh hfh hdtyr hdtydry ,
-                  Ahemdabad
-                </span>
-              </div>
-              <div>
-                <strong>Booking Date:</strong>
-                <span className="blue-text">23/09/2024</span>
-              </div>
-
-              <div>
-                <strong>Price:</strong>
-                <span className="blue-text">₹ 2499</span>
-              </div>
-              <div>
-                <strong>Title:</strong>
-                <span className="blue-text">INDIAN PREMIER LEAGUE</span>
-              </div>
-            </div>
-          </div>
-        </div>
+          ))
+        )}
       </div>
     </>
   );

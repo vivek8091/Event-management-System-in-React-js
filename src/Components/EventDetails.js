@@ -3,7 +3,7 @@ import "../Styles/eventDetails.css";
 import { useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { Toast } from "bootstrap";
+// import { Toast } from "bootstrap";
 
 const loadScript = (src) => {
   return new Promise((resolve) => {
@@ -39,14 +39,44 @@ function EventDetails() {
       image:
         "https://res.cloudinary.com/dtdlad1ud/image/upload/v1707733051/uhwydfqry5wqwkaazbbk.jpg",
       handler: async function (response) {
+        console.log(eventData.event_start_date);
+        const combineDateAndTime = (date, time) => {
+          const dateOnly = date.slice(0, 10); // just pick "YYYY-MM-DD" part from the string
+          let formattedTime = time;
+          if (time.length === 5) {
+            // "HH:MM"
+            formattedTime = `${time}:00`;
+          }
+          return `${dateOnly} ${formattedTime}`;
+        };
+
+        console.log(
+          combineDateAndTime(
+            eventData.event_start_date,
+            eventData.event_start_time
+          )
+        );
+
+        const today = new Date();
+        const booking_date =
+          today.getFullYear() +
+          "-" +
+          String(today.getMonth() + 1).padStart(2, "0") +
+          "-" +
+          String(today.getDate()).padStart(2, "0");
+        String(today.getDate()).padStart(2, "0");
+
         const bookingData = {
           event_id: eventData.id,
           user_id: JSON.parse(localStorage.getItem("user")).id,
           booking_title: eventData.event_title,
           ticket_id: response.razorpay_payment_id, // or generate your own ticket ID
-          event_date_time: eventData.event_start_date,
+          event_date_time: combineDateAndTime(
+            eventData.event_start_date,
+            eventData.event_start_time
+          ),
           event_location: eventData.event_location,
-          booking_date: new Date().toISOString().slice(0, 10), // today's date
+          booking_date: booking_date, // today's date
           booking_price: eventData.event_price,
           booking_image: eventData.event_image,
         };

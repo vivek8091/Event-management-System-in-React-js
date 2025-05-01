@@ -82,7 +82,12 @@ function MyBooking() {
                     className="qr-code"
                   />
                 </div>
-                <button className="delete-btn" onClick={() => deleteBooking(booking.id)}>Delete</button>
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteBooking(booking.id)}
+                >
+                  Delete
+                </button>
               </div>
               <div className="details-section">
                 <div className="details-grid">

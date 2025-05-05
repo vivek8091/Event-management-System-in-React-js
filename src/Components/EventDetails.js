@@ -44,7 +44,6 @@ function EventDetails() {
           const dateOnly = date.slice(0, 10); // just pick "YYYY-MM-DD" part from the string
           let formattedTime = time;
           if (time.length === 5) {
-            // "HH:MM"
             formattedTime = `${time}:00`;
           }
           return `${dateOnly} ${formattedTime}`;

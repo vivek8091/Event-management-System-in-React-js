@@ -86,39 +86,39 @@ function MyBooking() {
                   className="delete-btn"
                   onClick={() => deleteBooking(booking.id)}
                 >
-                  Delete
+                  <i className="fa-solid fa-trash-arrow-up"></i> <span>Delete</span>
                 </button>
               </div>
               <div className="details-section">
                 <div className="details-grid">
                   <div>
-                    <strong>Ticket ID:</strong>
+                    <strong>Ticket ID</strong>
                     <span className="blue-text">{booking.ticket_id}</span>
                   </div>
                   <div>
-                    <strong>Date & Time:</strong>
+                    <strong>Date & Time</strong>
                     <span className="blue-text">
                       {formatDateTime(booking.event_date_time)}
                     </span>
                   </div>
 
                   <div>
-                    <strong>Location:</strong>
+                    <strong>Location</strong>
                     <span className="blue-text">{booking.event_location}</span>
                   </div>
                   <div>
-                    <strong>Booking Date:</strong>
+                    <strong>Booking Date</strong>
                     <span className="blue-text">
                       {handleDate(booking.booking_date)}
                     </span>
                   </div>
 
                   <div>
-                    <strong>Price:</strong>
+                    <strong>Price</strong>
                     <span className="blue-text">₹ {booking.booking_price}</span>
                   </div>
                   <div>
-                    <strong>Title:</strong>
+                    <strong>Title</strong>
                     <span className="blue-text">{booking.booking_title}</span>
                   </div>
                 </div>

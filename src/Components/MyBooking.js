@@ -4,7 +4,7 @@ import axios from "axios";
 
 function MyBooking() {
   const [bookings, setBookings] = useState([]);
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(sessionStorage.getItem("user"));
   const user_id = user?.id;
 
   useEffect(() => {

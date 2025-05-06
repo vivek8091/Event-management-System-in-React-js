@@ -26,7 +26,7 @@ function Login() {
         "http://localhost:2121/api/users/login/",
         loginData
       );
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+      sessionStorage.setItem("user", JSON.stringify(res.data.user));
       alert(res.data.message);
       console.log("Logged in user:", res.data.user);
       navigate("/Home");

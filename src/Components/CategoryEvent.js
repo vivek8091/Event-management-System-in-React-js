@@ -30,6 +30,17 @@ function CategoryEvent() {
     navigate(`/EventDetails/${eventId}`);
   };
 
+  const handleTime = (timeString) => {
+    const [hour, minute] = timeString.split(":");
+    const date = new Date();
+    date.setHours(hour, minute);
+    return date.toLocaleTimeString("en-IN", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+  };
+
   let content;
 
   if (events.length > 0) {
@@ -62,7 +73,7 @@ function CategoryEvent() {
                           year: "numeric",
                         }
                       )}
-                      , {event.event_start_time}
+                      , {handleTime(event.event_start_time)}
                     </p>
                   )}
                 </div>

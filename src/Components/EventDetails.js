@@ -67,7 +67,7 @@ function EventDetails() {
 
         const bookingData = {
           event_id: eventData.id,
-          user_id: JSON.parse(localStorage.getItem("user")).id,
+          user_id: JSON.parse(sessionStorage.getItem("user")).id,
           booking_title: eventData.event_title,
           ticket_id: response.razorpay_payment_id, // or generate your own ticket ID
           event_date_time: combineDateAndTime(
@@ -139,7 +139,6 @@ function EventDetails() {
           `http://localhost:2121/api/events/getEventById/${eventId}`
         );
         console.log(res.data);
-
         setSelectedEvent(res.data.data);
       } catch (error) {
         console.error("Error while fetching events details!!!");

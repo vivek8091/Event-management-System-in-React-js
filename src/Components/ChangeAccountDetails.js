@@ -14,7 +14,7 @@ function ChangeAccountDetails() {
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedUser = JSON.parse(sessionStorage.getItem("user"));
     setUserData(storedUser);
   }, []);
 
@@ -72,7 +72,7 @@ function ChangeAccountDetails() {
         image: result.data.updatedUser.image,
       };
 
-      localStorage.setItem("user", JSON.stringify(updateUser));
+      sessionStorage.setItem("user", JSON.stringify(updateUser));
       setUserData(updateUser);
     } catch (error) {
       console.error("Error while updating user account details!!!", error);

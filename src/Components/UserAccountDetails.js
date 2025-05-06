@@ -7,7 +7,7 @@ function UserAccountDetails() {
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedUser = JSON.parse(sessionStorage.getItem("user"));
     setUserData(storedUser);
   }, []);
 

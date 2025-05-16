@@ -27,6 +27,7 @@ function Login() {
         loginData
       );
       sessionStorage.setItem("user", JSON.stringify(res.data.user));
+      window.dispatchEvent(new Event("storage"));
       alert(res.data.message);
       console.log("Logged in user:", res.data.user);
       navigate("/Home");

@@ -8,8 +8,14 @@ function Gallary() {
   useEffect(() => {
     const fetchGallaryData = async () => {
       try {
+        const token = sessionStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:2121/api/gallary/getGallaryData/"
+          "http://localhost:2121/api/gallary/getGallaryData/",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
         setGallaryData(response.data.data);
         console.log(response.data);

@@ -134,9 +134,15 @@ function EventDetails() {
 
   useEffect(() => {
     const fetchEventById = async () => {
+      const token = sessionStorage.getItem("token");
       try {
         const res = await axios.get(
-          `http://localhost:2121/api/events/getEventById/${eventId}`
+          `http://localhost:2121/api/events/getEventById/${eventId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
         console.log(res.data);
         setSelectedEvent(res.data.data);

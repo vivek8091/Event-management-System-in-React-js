@@ -207,7 +207,7 @@ function Registration() {
 
           <div className="login-link">
             <nav>
-              <Link to="/Login">Already have an account? Sign In</Link>
+              <Link to="/">Already have an account? Sign In</Link>
             </nav>
           </div>
         </form>

@@ -10,9 +10,16 @@ function CategoryEvent() {
 
   useEffect(() => {
     const fetchEvents = async () => {
+      const token = sessionStorage.getItem("token");
+      // console.log(token);
       try {
         const response = await axios.get(
-          `http://localhost:2121/api/events/getEventByCategory/${CategoryEvent}`
+          `http://localhost:2121/api/events/getEventByCategory/${CategoryEvent}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
         setEvents(response.data.data);
         console.log(response.data.data);

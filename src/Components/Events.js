@@ -7,19 +7,26 @@ export default function Events() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
+    const CategoryEvent = async (e) => {
+      const token = sessionStorage.getItem("token");
+      // console.log(token);
+      try {
+        const res = await axios.get(
+          "http://localhost:2121/api/category/getCategory/",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        setCategories(res.data.data);
+      } catch (error) {
+        console.error("Errorfetching categories!!!", error);
+      }
+    };
     CategoryEvent();
   }, []);
 
-  const CategoryEvent = async (e) => {
-    try {
-      const res = await axios.get(
-        "http://localhost:2121/api/category/getCategory/"
-      );
-      setCategories(res.data.data);
-    } catch (error) {
-      console.error("Errorfetching categories!!!", error);
-    }
-  };
   const navigate = useNavigate();
 
   const handleCategoryClick = (CategoryEvent) => {

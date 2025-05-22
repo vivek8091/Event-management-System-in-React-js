@@ -22,6 +22,7 @@ function EventDetails() {
 
   // Razorpay Logic...
   const displayRazorpay = async (amount, eventData) => {
+    const token = sessionStorage.getItem("token");
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -85,7 +86,7 @@ function EventDetails() {
             bookingData,
             {
               headers: {
-                Authorization: Cookies.get("accessToken"),
+                Authorization: `Bearer ${token}`,
               },
             }
           )

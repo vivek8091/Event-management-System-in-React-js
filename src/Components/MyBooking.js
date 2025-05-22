@@ -68,64 +68,71 @@ function MyBooking() {
 
   return (
     <>
-      <div className="booking-wrapper mt-5 mb-5">
-        {bookings.length === 0 ? (
-          <p>No bookings found!!!</p>
-        ) : (
-          bookings.map((booking) => (
-            <div key={booking.id} className="booking-container">
-              <div className="qr-section">
-                <div className="qr-img">
-                  <img
-                    src={`http://localhost:2121/uploads/${booking.booking_image}`}
-                    alt="booking_image"
-                    className="qr-code"
-                  />
+      <div className="booking-wrapper-outer">
+        <div className="booking-wrapper mt-3 mb-3">
+          {bookings.length === 0 ? (
+            <p>No bookings found!!!</p>
+          ) : (
+            bookings.map((booking) => (
+              <div key={booking.id} className="booking-container">
+                <div className="qr-section">
+                  <div className="qr-img">
+                    <img
+                      src={`http://localhost:2121/uploads/${booking.booking_image}`}
+                      alt="booking_image"
+                      className="qr-code"
+                    />
+                  </div>
+                  <button
+                    className="delete-btn"
+                    onClick={() => deleteBooking(booking.id)}
+                  >
+                    <i className="fa-solid fa-trash-arrow-up"></i>{" "}
+                    <span>Delete</span>
+                  </button>
                 </div>
-                <button
-                  className="delete-btn"
-                  onClick={() => deleteBooking(booking.id)}
-                >
-                  <i className="fa-solid fa-trash-arrow-up"></i> <span>Delete</span>
-                </button>
-              </div>
-              <div className="details-section">
-                <div className="details-grid">
-                  <div>
-                    <strong>Ticket ID</strong>
-                    <span className="blue-text">{booking.ticket_id}</span>
-                  </div>
-                  <div>
-                    <strong>Date & Time</strong>
-                    <span className="blue-text">
-                      {formatDateTime(booking.event_date_time)}
-                    </span>
-                  </div>
+                <div className="details-section">
+                  <div className="details-grid">
+                    <div>
+                      <strong>Ticket ID</strong>
+                      <span className="blue-text">{booking.ticket_id}</span>
+                    </div>
+                    <div>
+                      <strong>Date & Time</strong>
+                      <span className="blue-text">
+                        {formatDateTime(booking.event_date_time)}
+                      </span>
+                    </div>
 
-                  <div>
-                    <strong>Location</strong>
-                    <span className="blue-text">{booking.event_location}</span>
-                  </div>
-                  <div>
-                    <strong>Booking Date</strong>
-                    <span className="blue-text">
-                      {handleDate(booking.booking_date)}
-                    </span>
-                  </div>
+                    <div>
+                      <strong>Location</strong>
+                      <span className="blue-text">
+                        {booking.event_location}
+                      </span>
+                    </div>
+                    <div>
+                      <strong>Booking Date</strong>
+                      <span className="blue-text">
+                        {handleDate(booking.booking_date)}
+                      </span>
+                    </div>
 
-                  <div>
-                    <strong>Price</strong>
-                    <span className="blue-text">₹ {booking.booking_price}</span>
-                  </div>
-                  <div>
-                    <strong>Title</strong>
-                    <span className="blue-text">{booking.booking_title}</span>
+                    <div>
+                      <strong>Price</strong>
+                      <span className="blue-text">
+                        ₹ {booking.booking_price}
+                      </span>
+                    </div>
+                    <div>
+                      <strong>Title</strong>
+                      <span className="blue-text">{booking.booking_title}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))
-        )}
+            ))
+          )}
+        </div>
       </div>
     </>
   );

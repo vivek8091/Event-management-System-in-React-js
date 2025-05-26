@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "../Styles/eventDetails.css";
 import { useNavigate, useParams } from "react-router-dom";
-import Cookies from "js-cookie";
 import axios from "axios";
 // import { Toast } from "bootstrap";
 
@@ -91,7 +90,6 @@ function EventDetails() {
             }
           )
           .then((res) => {
-            // Toast.success(res.data.message);
             navigate("/MyBooking");
           })
           .catch((err) => {

@@ -22,9 +22,15 @@ function ChangePassword() {
     const userId = user?.id;
 
     try {
+      const token = sessionStorage.getItem("token");
       const response = await axios.put(
         `http://localhost:2121/api/users/changePassword/${userId}`,
-        formData
+        formData,
+        {
+          headers: {
+            Authorization: `bearer ${token}`,
+          }
+        }
       );
 
       setFormData({

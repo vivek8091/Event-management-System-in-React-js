@@ -43,11 +43,13 @@ function ChangeAccountDetails() {
     e.preventDefault();
 
     try {
+      const token = sessionStorage.getItem("token");
       const result = await axios.put(
         `http://localhost:2121/api/users/updateUser/${userData.id}`,
         changeData,
         {
           headers: {
+            Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
           },
         }

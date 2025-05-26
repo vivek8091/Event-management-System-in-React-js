@@ -22,9 +22,15 @@ function Contact() {
     e.preventDefault();
 
     try {
+      const token = sessionStorage.getItem("token");
       const result = await axios.post(
         "http://localhost:2121/api/contact/createContact",
-        getContacts
+        getContacts,
+        {
+          headers: {
+            Authorization: `bearer ${token}`,
+          },
+        }
       );
       alert(result.data.message);
       console.log("Submitted data...", result.data.data);
@@ -107,16 +113,16 @@ function Contact() {
               />
             </div>
             <div className="form-floating mb-3">
-            <textarea
-              className="form-control"
-              placeholder="Leave a message here..."
-              id="floatingTextarea"
-              name="message"
-              value={getContacts.message}
-              onChange={handleChange}
-            ></textarea>
-            <label htmlFor="floatingTextarea">Message</label>
-          </div>
+              <textarea
+                className="form-control"
+                placeholder="Leave a message here..."
+                id="floatingTextarea"
+                name="message"
+                value={getContacts.message}
+                onChange={handleChange}
+              ></textarea>
+              <label htmlFor="floatingTextarea">Message</label>
+            </div>
             <button type="submit" className="btn btn-primary w-100">
               Contact Us
             </button>

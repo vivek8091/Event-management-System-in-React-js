@@ -10,8 +10,14 @@ function MyBooking() {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
+        const token = sessionStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:2121/api/bookings/getBookingsByUser/${user_id}`
+          `http://localhost:2121/api/bookings/getBookingsByUser/${user_id}`,
+          {
+            headers: {
+              Authorization: `bearer ${token}`,
+            },
+          }
         );
         setBookings(response.data.data);
         console.log(response.data);

@@ -19,10 +19,8 @@ function Gallary() {
         );
         setGallaryData(response.data.data);
         console.log(response.data);
-        // alert("Gallary data fetched successfully...");
       } catch (error) {
         console.error("Error while fetching gallary data!!!", error);
-        // alert("Could not fetch data!!!");
       }
     };
 

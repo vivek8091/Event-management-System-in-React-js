@@ -40,7 +40,7 @@ function Registration() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:2121/api/users/register",
+        `${process.env.BASE_URL}/api/users/register`,
         data,
         {
           headers: {

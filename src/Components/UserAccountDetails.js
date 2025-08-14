@@ -25,7 +25,7 @@ function UserAccountDetails() {
 
             <div className="navigations">
               <nav>
-                <Link to="/">
+                <Link to="/Home">
                   <span>
                     <i className="fa-solid fa-house"></i>
                   </span>
@@ -38,7 +38,7 @@ function UserAccountDetails() {
             <div className="user-data">
               <div className="user-img">
                 <img
-                  src={`http://localhost:2121/uploads/${userData.image}`}
+                  src={`${process.env.BASE_URL}/uploads/${userData.image}`}
                   alt="user_logo"
                 />
                 <span>

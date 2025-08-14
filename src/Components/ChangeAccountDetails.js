@@ -45,7 +45,7 @@ function ChangeAccountDetails() {
     try {
       const token = sessionStorage.getItem("token");
       const result = await axios.put(
-        `http://localhost:2121/api/users/updateUser/${userData.id}`,
+        `${process.env.BASE_URL}/api/users/updateUser/${userData.id}`,
         changeData,
         {
           headers: {

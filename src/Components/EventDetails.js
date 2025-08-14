@@ -81,7 +81,7 @@ function EventDetails() {
         };
         await axios
           .post(
-            "http://localhost:2121/api/bookings/createBooking/",
+            `${process.env.BASE_URL}/api/bookings/createBooking/`,
             bookingData,
             {
               headers: {
@@ -136,7 +136,7 @@ function EventDetails() {
       const token = sessionStorage.getItem("token");
       try {
         const res = await axios.get(
-          `http://localhost:2121/api/events/getEventById/${eventId}`,
+          `${process.env.BASE_URL}/api/events/getEventById/${eventId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -158,7 +158,7 @@ function EventDetails() {
       {selectedEvent.map((event, index) => (
         <div key={event.id} className="event-details p-4">
           <img
-            src={`http://localhost:2121/uploads/${event.event_image}`}
+            src={`${process.env.BASE_URL}/uploads/${event.event_image}`}
             alt={event.event_image}
             className="event-img"
           />

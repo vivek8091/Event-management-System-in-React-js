@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../Styles/categoryEvent.css";
 import axios from "axios";
 
-function CategoryEvent() {
+export default function CategoryEvent() {
   const [events, setEvents] = useState([]);
   const { CategoryEvent } = useParams();
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ function CategoryEvent() {
       const token = sessionStorage.getItem("token");
       try {
         const response = await axios.get(
-          `http://localhost:2121/api/events/getEventByCategory/${CategoryEvent}`,
+          `${process.env.BASE_URL}/api/events/getEventByCategory/${CategoryEvent}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ function CategoryEvent() {
             <div className="event-item">
               {event.event_image && (
                 <img
-                  src={`http://localhost:2121/uploads/${event.event_image}`}
+                  src={`process.env.BASE_URL/uploads/${event.event_image}`}
                   alt={event.event_image}
                   className="event-img"
                 />
@@ -143,5 +143,3 @@ function CategoryEvent() {
     </>
   );
 }
-
-export default CategoryEvent;

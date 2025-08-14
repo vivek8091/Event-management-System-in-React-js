@@ -28,8 +28,6 @@ function Login() {
       );
       sessionStorage.setItem("user", JSON.stringify(res.data.user));
       sessionStorage.setItem("token", res.data.token);
-      // console.log(sessionStorage.getItem("token"));
-      
       window.dispatchEvent(new Event("storage"));
       alert(res.data.message);
       console.log("Logged in user:", res.data.user);

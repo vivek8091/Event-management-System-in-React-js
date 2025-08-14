@@ -24,7 +24,7 @@ function Contact() {
     try {
       const token = sessionStorage.getItem("token");
       const result = await axios.post(
-        "http://localhost:2121/api/contact/createContact",
+        `${process.env.BASE_URL}/api/contact/createContact`,
         getContacts,
         {
           headers: {

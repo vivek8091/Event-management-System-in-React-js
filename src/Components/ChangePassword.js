@@ -24,7 +24,7 @@ function ChangePassword() {
     try {
       const token = sessionStorage.getItem("token");
       const response = await axios.put(
-        `http://localhost:2121/api/users/changePassword/${userId}`,
+        `${process.env.BASE_URL}/api/users/changePassword/${userId}`,
         formData,
         {
           headers: {

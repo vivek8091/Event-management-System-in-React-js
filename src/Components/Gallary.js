@@ -10,7 +10,7 @@ function Gallary() {
       try {
         const token = sessionStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:2121/api/gallary/getGallaryData/",
+          `${process.env.BASE_URL}/api/gallary/getGallaryData/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ function Gallary() {
               <div className="image-container">
                 {/* Image */}
                 <img
-                  src={`http://localhost:2121/uploads/${image.gallary_image}`}
+                  src={`${process.env.BASE_URL}/uploads/${image.gallary_image}`}
                   alt={image.gallary_image}
                   className="img-fluid"
                 />

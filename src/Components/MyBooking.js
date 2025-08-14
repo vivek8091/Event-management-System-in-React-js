@@ -12,10 +12,10 @@ function MyBooking() {
       try {
         const token = sessionStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:2121/api/bookings/getBookingsByUser/${user_id}`,
+          `${process.env.BASE_URL}/api/bookings/getBookingsByUser/${user_id}`,
           {
             headers: {
-              Authorization: `bearer ${token}`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -56,10 +56,16 @@ function MyBooking() {
   };
 
   const deleteBooking = async (bookingId) => {
+    const token = sessionStorage.getItem("token");
     if (window.confirm("Are you sure you want to delete this booking?")) {
       try {
         await axios.delete(
-          `http://localhost:2121/api/bookings/deleteBooking/${bookingId}`
+          `process.env.BASE_URL/api/bookings/deleteBooking/${bookingId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
         alert("Booking deleted successfully...");
         setBookings((prevBookings) =>
@@ -84,7 +90,7 @@ function MyBooking() {
                 <div className="qr-section">
                   <div className="qr-img">
                     <img
-                      src={`http://localhost:2121/uploads/${booking.booking_image}`}
+                      src={`process.env.BASE_URL/uploads/${booking.booking_image}`}
                       alt="booking_image"
                       className="qr-code"
                     />

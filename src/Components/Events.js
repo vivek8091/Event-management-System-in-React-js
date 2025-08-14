@@ -12,7 +12,7 @@ export default function Events() {
       // console.log(token);
       try {
         const res = await axios.get(
-          "http://localhost:2121/api/category/getCategory/",
+          "process.env.BASE_URL/api/category/getCategory/",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ export default function Events() {
                 >
                   <div className="cat-img">
                     <img
-                      src={`http://localhost:2121/uploads/${cat.image}`}
+                      src={`process.env.BASE_URL/uploads/${cat.image}`}
                       alt={cat.category_title}
                       className="img-fluid"
                     />
